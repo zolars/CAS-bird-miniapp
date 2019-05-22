@@ -1,0 +1,46 @@
+{
+  "pages":[ 
+    "pages/index/index",
+    "pages/indexMap/indexMap",
+    "pages/choosepicture/choosepicture",
+    "pages/showdetail/showdetail",
+    "pages/takepicture/takepicture"  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "水鸟识别",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#000000",
+    "selectedColor": "#439057",
+    "list":[
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resources/homepage-picture.png",
+        "selectedIconPath": "resources/homepage-picture-fill.png"
+      },
+      {
+        "pagePath": "pages/takepicture/takepicture",
+        "text": "拍照识别",
+        "iconPath": "resources/take-picture.png",
+        "selectedIconPath":"resources/take-picture-fill.png"
+      },
+      {
+        "pagePath": "pages/choosepicture/choosepicture",
+        "text": "相册识别",
+        "iconPath": "resources/choose-picture.png",
+        "selectedIconPath": "resources/choose-picture-fill.png"
+      }
+      
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

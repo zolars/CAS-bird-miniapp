@@ -1,0 +1,44 @@
+/* pages/showdetail/showdetail.wxss */
+
+.show-image {
+  width: 100%;
+  height: 220px;
+}
+
+.title{
+  font-size: 80rpx;
+  padding-left: 10rpx;
+}
+
+.subtile{
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+
+.subcontent{
+  padding-left: 10rpx;
+}
+
+.key{
+  font-size: 40rpx;
+  font-family: "楷体";
+  color: #000; 
+  padding-left: 3%;
+}
+
+.item{
+  font-size: 28rpx;
+  font-family: "楷体";
+  color: #777; 
+  padding-left: 5%;
+}
+
+.foot-item{
+  font-size: 28rpx;
+  font-family: "楷体";
+  color: #000; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

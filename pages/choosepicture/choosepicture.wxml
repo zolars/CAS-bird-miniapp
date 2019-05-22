@@ -1,0 +1,77 @@
+<!-- pages/choosepicture/choosepicture.wxml -->
+<scroll-view>
+  <view style="display: none">
+    <button type="default" bindtap="chooseimage">点击上传照片</button>
+  </view>
+  <image style="width: 100%; height: 400px; background-color: #eeeeee;" src="{{tempPic}}"></image>
+  <view class="show">
+    <view class="show-container">
+      <image class='show-image' src="{{resultAindex}}"></image>
+    </view>
+    <view class="show-container">
+      <text class='show-title' bindtap='showdetailButton'>
+        {{resultAnameCHS}} \n {{resultAname}}
+      </text>
+    </view>
+  </view>
+  <view class="show-container">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class='show-content'>可信度{{resultArate}}%</text>
+  </view>
+  <view class="show">
+    <view class="show-container">
+      <image class='show-image' src="{{resultBindex}}"></image>
+    </view>
+    <view class="show-container">
+      <text class='show-title' bindtap='showdetailButton'>
+        {{resultBnameCHS}} \n {{resultBname}}
+      </text>
+    </view>
+  </view>
+  <view class="show-container">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class='show-content'>可信度{{resultBrate}}%</text>
+  </view>
+  <view class="show">
+    <view class="show-container">
+      <image class='show-image' src="{{resultCindex}}"></image>
+    </view>
+    <view class="show-container">
+      <text class='show-title' bindtap='showdetailButton'>
+        {{resultCnameCHS}} \n {{resultCname}}
+      </text>
+    </view>
+  </view>
+  <view class="show-container">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class='show-content'>可信度{{resultCrate}}%</text>
+  </view>
+  <view class="show">
+    <view class="show-container">
+      <image class='show-image' src="{{resultDindex}}"></image>
+    </view>
+    <view class="show-container">
+      <text class='show-title' bindtap='showdetailButton'>
+        {{resultDnameCHS}} \n {{resultDname}}
+      </text>
+    </view>
+  </view>
+  <view class="show-container">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class='show-content'>可信度{{resultDrate}}%</text>
+  </view>
+  <view class="show">
+    <view class="show-container">
+      <image class='show-image' src="{{resultEindex}}"></image>
+    </view>
+    <view class="show-container">
+      <text class='show-title' bindtap='showdetailButton'>
+        {{resultEnameCHS}} \n {{resultEname}}
+      </text>
+    </view>
+  </view>
+  <view class="show-container">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class='show-content'>可信度{{resultErate}}%</text>
+  </view>
+</scroll-view>

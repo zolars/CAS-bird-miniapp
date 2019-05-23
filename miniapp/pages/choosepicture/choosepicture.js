@@ -71,11 +71,11 @@ Page({
             console.log(data[1][2])
 
             that.setData({
-              resultAindex: "../../../resources/label/" + data[1][0] + ".jpg",
-              resultBindex: "../../../resources/label/" + data[2][0] + ".jpg",
-              resultCindex: "../../../resources/label/" + data[3][0] + ".jpg",
-              resultDindex: "../../../resources/label/" + data[4][0] + ".jpg",
-              resultEindex: "../../../resources/label/" + data[5][0] + ".jpg",
+              resultAindex: "../../resources/label/" + data[1][0] + ".jpg",
+              resultBindex: "../../resources/label/" + data[2][0] + ".jpg",
+              resultCindex: "../../resources/label/" + data[3][0] + ".jpg",
+              resultDindex: "../../resources/label/" + data[4][0] + ".jpg",
+              resultEindex: "../../resources/label/" + data[5][0] + ".jpg",
 
               resultAname: data[1][2],
               resultBname: data[2][2],

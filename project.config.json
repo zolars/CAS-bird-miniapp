@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx7929249c2b6e0c98",
-	"projectname": "miniprogram-test-1",
+	"projectname": "cas-bird-miniapp",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

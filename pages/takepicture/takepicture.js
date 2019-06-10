@@ -1,5 +1,6 @@
-//logs.js
+// logs.js
 const util = require('../../utils/util.js')
+
 
 Page({
   /**
@@ -41,67 +42,72 @@ Page({
     this.ctx = wx.createCameraContext()
   },
   takePhoto() {
-
     var that = this;
 
     this.ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        this.setData({
-          src: res.tempImagePath
-        });
+        this.setData({src: res.tempImagePath});
 
         const tempFilePaths = res.tempImagePath;
 
         wx.uploadFile({
-          url: 'http://127.0.0.1:5000/ImageUpdate',
+          url: 'https://birdid.iscas.ac.cn:5000/ImageUpload',
           header: {
-            'content-type': 'multipart/form-data' // 默认值
+            'content-type': 'multipart/form-data'  // 默认值
           },
           filePath: tempFilePaths,
           name: 'file',
-          formData: {
-            userId: 1234567
-          },
+          formData: {userId: 1234567},
           success(res) {
             const data = JSON.parse(res.data);
+            const birdData = require('../../utils/data.js').birdData()
+
+            const id0 = data[0]['birdNum'];
+            const id1 = data[1]['birdNum'];
+            const id2 = data[2]['birdNum'];
+            const id3 = data[3]['birdNum'];
+            const id4 = data[4]['birdNum'];
 
             console.log(data)
-            console.log(data[1][0])
-            console.log(data[1][1])
-            console.log(data[1][2])
+            console.log(birdData[id0]['pic'])
+            console.log(birdData[id1]['pic'])
+            console.log(birdData[id2]['pic'])
+            console.log(birdData[id3]['pic'])
+            console.log(birdData[id4]['pic'])
+
+
 
             that.setData({
-              resultAindex: "../../resources/label/" + data[1][0] + ".jpg",
-              resultBindex: "../../resources/label/" + data[2][0] + ".jpg",
-              resultCindex: "../../resources/label/" + data[3][0] + ".jpg",
-              resultDindex: "../../resources/label/" + data[4][0] + ".jpg",
-              resultEindex: "../../resources/label/" + data[5][0] + ".jpg",
+              resultAindex: birdData[id0]['pic'],
+              resultBindex: birdData[id1]['pic'],
+              resultCindex: birdData[id2]['pic'],
+              resultDindex: birdData[id3]['pic'],
+              resultEindex: birdData[id4]['pic'],
 
-              resultAname: data[1][2],
-              resultBname: data[2][2],
-              resultCname: data[3][2],
-              resultDname: data[4][2],
-              resultEname: data[5][2],
+              resultAname: birdData[id0]['英文名'],
+              resultBname: birdData[id1]['英文名'],
+              resultCname: birdData[id2]['英文名'],
+              resultDname: birdData[id3]['英文名'],
+              resultEname: birdData[id4]['英文名'],
 
-              resultArate: data[1][3],
-              resultBrate: data[2][3],
-              resultCrate: data[3][3],
-              resultDrate: data[4][3],
-              resultErate: data[5][3],
+              resultArate: data[0]['probability'],
+              resultBrate: data[1]['probability'],
+              resultCrate: data[2]['probability'],
+              resultDrate: data[3]['probability'],
+              resultErate: data[4]['probability'],
 
-              resultAnameCHS: data[1][1],
-              resultBnameCHS: data[2][1],
-              resultCnameCHS: data[3][1],
-              resultDnameCHS: data[4][1],
-              resultEnameCHS: data[5][1]
+              resultAnameCHS: data[0]['birdNameCN'],
+              resultBnameCHS: data[1]['birdNameCN'],
+              resultCnameCHS: data[2]['birdNameCN'],
+              resultDnameCHS: data[3]['birdNameCN'],
+              resultEnameCHS: data[4]['birdNameCN'],
             });
           },
           fail(res) {
-            console.log("fail" + res);
+            console.log('fail' + res);
           }
         })
-
       }
     })
   },

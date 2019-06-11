@@ -52,7 +52,7 @@ Page({
         const tempFilePaths = res.tempImagePath;
 
         wx.uploadFile({
-          url: 'https://birdid.iscas.ac.cn:5000/ImageUpload',
+          url: 'https://birdid.iscas.ac.cn:8080/',
           header: {
             'content-type': 'multipart/form-data'  // 默认值
           },

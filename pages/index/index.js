@@ -13,7 +13,7 @@ Page({
     })
   },
 
-  knowledgeButton: function() {
+  knowledgeButton: function () {
     wx.request({
       url: 'http://localhost:8082/JavaSdkServerWechat_Web_exploded/Startup', // 仅为示例，并非真实的接口地址
       data: {

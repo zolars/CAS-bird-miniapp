@@ -47,7 +47,7 @@ Page({
     this.ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        this.setData({src: res.tempImagePath});
+        this.setData({ src: res.tempImagePath });
 
         const tempFilePaths = res.tempImagePath;
 
@@ -58,7 +58,7 @@ Page({
           },
           filePath: tempFilePaths,
           name: 'file',
-          formData: {userId: 1234567},
+          formData: { userId: 1234567 },
           success(res) {
             const data = JSON.parse(res.data);
             const birdData = require('../../utils/data.js').birdData()

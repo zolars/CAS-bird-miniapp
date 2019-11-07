@@ -14,14 +14,14 @@
     </swiper>
   </view>
   <view class='map-container'>
-    <button bindtap='mapButton' class='map-container-button'>查看地图</button>
+    <button bindtap='mapButton' class='map-container-button'>View the map</button>
   </view>
   <view class='leftright-container'>
     <view class='knowledge-container'>
-      <button bindtap='knowledgeButton' class='knowledge-container-button'>科普知识</button>
+      <button bindtap='knowledgeButton' class='knowledge-container-button'>Knowledge</button>
     </view>
     <view class='about-container'>
-      <button bindtap='aboutButton' class='about-container-button'>关于</button>
+      <button bindtap='aboutButton' class='about-container-button'>About</button>
     </view>
   </view>
 </view>

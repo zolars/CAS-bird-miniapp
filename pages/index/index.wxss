@@ -1,11 +1,13 @@
 /**index.wxss**/
 .pic-container{
   width: 100%;
-  height: 600rpx;
+  height: 100vh;
+  position: absolute;
+
 }
 
 .swiper-container{
-  height: 580rpx;
+  height: 100vh;
   width: 100%;
 }
 
@@ -20,6 +22,7 @@
 
 .swiper-image{
   width: 100%;
+  height: 100vh;
 }
 
 .map-container-button{
@@ -49,21 +52,45 @@
 }
 
 .about-container{
-  width: 40%;
-  height: 220rpx;
+  width: 100%;
+  height: 25vh;
   border-radius: 0rpx;
-  background-color: peru;
+  background-color: #FFF;
+  filter: alpha(opacity=0.5);
+  opacity: 0.5;
+  position: absolute;
+  left: 0vw;
+  top: 75vh;
+}
+
+.poem-container{
+  width: 100%;
+  height: 25vh;
+  border-radius: 0rpx;
+  color: rgb(1, 0, 2);
+  position: absolute;
+  left: 0vw;
+  top: 75vh;
+  font-family:KaiTi;
+  font-size: 45rpx;
 }
 
 .about-container-button{
-  width: 100%;
-  height: 220rpx;
-  border-radius: 0rpx;
-  background-color: peru;
-  color: white;
-  font-size: 80rpx;
+  width: 18vw;
+  height: 5vh;
+  border-radius: 80rpx;
+  background-color:#FFF;
+  color: grey;
+  font-size: 27rpx;
+  position: absolute;
+  left: 77vw;
+  top: 93vh;
 }
+
 
 .leftright-container{
   display: flex;
 }
+
+
+.main-container { width: 100vw; height: 100vh; margin: 0 auto; position: relative; } 

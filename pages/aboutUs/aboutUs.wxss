@@ -1,0 +1,15 @@
+/* pages/aboutUs/aboutUs.wxss */
+
+.key{
+  font-size: 40rpx;
+  font-family: "楷体";
+  color: #000; 
+  padding-left: 3%;
+}
+
+.item{
+  font-size: 28rpx;
+  font-family: "楷体";
+  color: #777; 
+  padding-left: 5%;
+}

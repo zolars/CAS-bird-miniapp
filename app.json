@@ -4,13 +4,14 @@
     "pages/indexMap/indexMap",
     "pages/choosepicture/choosepicture",
     "pages/showdetail/showdetail",
-    "pages/success/success"
+    "pages/success/success",
+    "pages/aboutUs/aboutUs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Waterbird Recognition",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#008000",
+    "navigationBarTitleText": "水鸟识别",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#000000",
@@ -18,13 +19,13 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "Home",
+        "text": "首页",
         "iconPath": "resources/homepage-picture.png",
         "selectedIconPath": "resources/homepage-picture-fill.png"
       },
       {
         "pagePath": "pages/choosepicture/choosepicture",
-        "text": "Album",
+        "text": "相册识别",
         "iconPath": "resources/choose-picture.png",
         "selectedIconPath": "resources/choose-picture-fill.png"
       }

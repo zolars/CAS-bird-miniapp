@@ -1,5 +1,5 @@
 // pages/results/results.js
-Page({  
+Page({
   /**
    * 页面的初始数据
    */
@@ -7,7 +7,7 @@ Page({
     array: [{
       mode: 'aspectFit',
       text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
-  }],
+    }],
     tempPic: null,
     resultAindex: null,
     resultBindex: null,
@@ -39,24 +39,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     const data = JSON.parse(options.data);
-    console.log(data);
     const birdData = require('../../utils/data.js').birdData()
 
-    const id0 = data[0]['birdNum'];
-    const id1 = data[1]['birdNum'];
-    const id2 = data[2]['birdNum'];
-    const id3 = data[3]['birdNum'];
-    const id4 = data[4]['birdNum'];
-
-
-    console.log(data)
-    console.log(birdData[id0]['pic'])
-    console.log(birdData[id1]['pic'])
-    console.log(birdData[id2]['pic'])
-    console.log(birdData[id3]['pic'])
-    console.log(birdData[id4]['pic'])
+    const id0 = data[0]['birdNameCN'];
+    const id1 = data[1]['birdNameCN'];
+    const id2 = data[2]['birdNameCN'];
+    const id3 = data[3]['birdNameCN'];
+    const id4 = data[4]['birdNameCN'];
 
     this.setData({
       resultAindex: birdData[id0]['pic'],
@@ -83,60 +74,81 @@ Page({
       resultDnameCHS: data[3]['birdNameCN'],
       resultEnameCHS: data[4]['birdNameCN'],
     })
-    
+
   },
 
-  showdetailButton: function () {
-    wx.navigateTo(
-      { url: '../showdetail/showdetail?showId=' + this.data.resultAnum })
+  showdetailButtonA: function() {
+    wx.navigateTo({
+      url: '../showdetail/showdetail?showId=' + this.data.resultAnameCHS
+    })
+  },
+  showdetailButtonB: function() {
+    wx.navigateTo({
+      url: '../showdetail/showdetail?showId=' + this.data.resultBnameCHS
+    })
+  },
+  showdetailButtonC: function() {
+    wx.navigateTo({
+      url: '../showdetail/showdetail?showId=' + this.data.resultCnameCHS
+    })
+  },
+  showdetailButtonD: function() {
+    wx.navigateTo({
+      url: '../showdetail/showdetail?showId=' + this.data.resultDnameCHS
+    })
+  },
+  showdetailButtonE: function() {
+    wx.navigateTo({
+      url: '../showdetail/showdetail?showId=' + this.data.resultEnameCHS
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

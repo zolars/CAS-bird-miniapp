@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultBindex: null,  //'../../resources/label/003.jpg',
+    resultBindex: null,  //"../../resources/label/003.jpg",
     showId: null,
 
     birdInfoMap: {
@@ -35,25 +35,25 @@ Page({
   onLoad: function (options) {
     const showId = options.showId;
     console.log(showId)
-    const birdData = require('../../utils/data.js').birdData()
+    const birdData = require("../../utils/data.js").birdData()
     this.setData({
       showId: showId,
-      resultBindex: birdData[showId]['pic'],
+      resultBindex: birdData[showId]["pic"],
       birdInfoMap: {
         number: "Null",
         attrs: {
           "中文名": showId,
-          "英文名": birdData[showId]['英文名'],
-          "拉丁文名": birdData[showId]['拉丁文名'],
-          "分类": birdData[showId]['分类'],
-          "IUCN 红色名录等级": birdData[showId]['IUCN 红色名录等级'],
-          "描述": birdData[showId]['描述'],
-          "虹膜": birdData[showId]['虹膜'],
-          "嘴": birdData[showId]['嘴'],
-          "脚": birdData[showId]['脚'],
-          "叫声": birdData[showId]['叫声'],
-          "分布范围": birdData[showId]['分布范围'],
-          "分布状况": birdData[showId]['分布状况'],
+          "英文名": birdData[showId]["英文名"],
+          "拉丁文名": birdData[showId]["拉丁文名"],
+          "分类": birdData[showId]["分类"],
+          "IUCN 红色名录等级": birdData[showId]["IUCN 红色名录等级"],
+          "描述": birdData[showId]["描述"],
+          "虹膜": birdData[showId]["虹膜"],
+          "嘴": birdData[showId]["嘴"],
+          "脚": birdData[showId]["脚"],
+          "叫声": birdData[showId]["叫声"],
+          "分布范围": birdData[showId]["分布范围"],
+          "分布状况": birdData[showId]["分布状况"],
           "习性": birdData[showId]["习性"],
           "俗名": birdData[showId]["俗名"],
         }

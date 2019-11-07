@@ -7,8 +7,8 @@ Page({
    */
   data: {
     array: [{
-      mode: 'aspectFit',
-      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+      mode: "aspectFit",
+      text: "aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来"
     }]
   },
 
@@ -16,11 +16,9 @@ Page({
     var that = this;
     var tempFile = null;
     wx.chooseImage({
-      count: 1,  // 默认9
-      sizeType:
-          ['original', 'compressed'],  // 可以指定是原图还是压缩图，默认二者都有
-      sourceType:
-          ['album', 'camera'],  // 可以指定来源是相册还是相机，默认二者都有
+      count: 1, // 默认9
+      sizeType: ["original", "compressed"], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
       success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
@@ -29,30 +27,54 @@ Page({
           tempPic: tempFilePaths,
         });
 
-        that.setData({ 
+        that.setData({
           loading: true,
           disabled: true
         });
 
         wx.uploadFile({
-          url: 'https://birdid.iscas.ac.cn:8080/',
+          url: "https://birdid.iscas.ac.cn:8080/",
           header: {
-            'content-type': 'multipart/form-data'  // 默认值
+            "content-type": "multipart/form-data" // 默认值
           },
           filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {userId: 1234567},
+          name: "file",
+          formData: {
+            userId: 1234567
+          },
           success(res) {
-            wx.navigateTo({
-              url: "../success/success?data=" + res.data
-            }); 
+            console.log(res.data);
+            if (JSON.parse(res.data)[0]["birdNum"] == 0) {
+              if (JSON.parse(res.data)[0]["detected"].length > 0) {
+                var text = ""
+                for (var obj in JSON.parse(res.data)[0]["detected"]) {
+                  text += JSON.parse(res.data)[0]["detected"][obj] + ", "
+                }
+                wx.showModal({
+                  title: "没找到水鸟",
+                  content: "图片中似乎没有水鸟? 它看上去是: " + text.slice(0, -2),
+                  showCancel: false
+                });
+              } else {
+                wx.showModal({
+                  title: "没找到水鸟",
+                  content: "图片中似乎没有水鸟? ",
+                  showCancel: false
+                });
+              }
+
+            } else {
+              wx.navigateTo({
+                url: "../success/success?data=" + res.data
+              });
+            }
             that.setData({
               loading: false,
               disabled: false
             });
           },
           fail(res) {
-            console.log('fail' + res);
+            console.log("fail" + res);
             that.setData({
               loading: false,
               disabled: false

@@ -1,16 +1,16 @@
 <!-- pages/showdetail/showdetail.wxml -->
 <view class="layout_horizontal">
   <view>
-    <image class='show-image' src="{{resultBindex}}"></image>
+    <image class="show-image" src="{{resultBindex}}"></image>
   </view>
 </view>
-<view class='attrs' wx:for='{{birdInfoMap.attrs}}' wx:for-index='key'>
-  <text class='key'>{{key}}</text>
-  <text class='item' decode="{{true}}" space="{{true}}">
+<view class="attrs" wx:for="{{birdInfoMap.attrs}}" wx:for-index="key">
+  <text class="key">{{key}}</text>
+  <text class="item" decode="{{true}}" space="{{true}}">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{item}}
   </text>
 </view>
 <view class="layout_horizontal">
-  <text class='foot-item'>数据来源</text>
-  <text class='foot-item'>\n 中科院地理所</text>
+  <text class="foot-item">数据来源</text>
+  <text class="foot-item">\n 中科院地理所</text>
 </view>

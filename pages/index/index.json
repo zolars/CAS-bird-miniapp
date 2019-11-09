@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "plus_button": "../../components/plus_button/plus_button"
+    "plus_button": "../../components/plus_button/plus_button",
+    "wux-fab-button": "../../components/fab-button/index"
   },
   "disableScroll": true
 }

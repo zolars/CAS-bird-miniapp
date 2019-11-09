@@ -1,5 +1,6 @@
 <!-- index.wxml -->
-<plus_button></plus_button>
+<wux-fab-button position="{{ types[typeIndex] }}" theme="{{ colors[colorIndex] }}" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:click="onClick"
+  bind:camera="getCameraImage" bind:album="getAlbumImage" bind:message="getMessageImage" />
 
 <view class="main-container">
   <view class="pic-container">
@@ -20,10 +21,17 @@
   </view>
 
   <text class="poem-container" decode="{{true}}" space="{{true}}">
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 云中谁寄锦书来，\n 
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 雁字回时，月满西楼。</text>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 云中谁寄锦书来，
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 雁字回时，月满西楼。
+  </text>
 
-  <view class="btn-area">
-    <button bindtap="aboutButton" class="about-container-button">关于</button>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">
+        关于
+      </navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © Institute of Software, CAS</view>
   </view>
+
 </view>

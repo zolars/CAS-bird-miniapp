@@ -77,6 +77,8 @@ Component({
               console.log("Fail. Log: " + res);
             }
           });
+
+          
         }
       })
     }

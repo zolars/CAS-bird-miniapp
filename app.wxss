@@ -1,6 +1,4 @@
 /**app.wxss**/
-@import 'utils/weui.wxss';
-
 page{
     background-color: #EDEDED;
     font-size: 16px;

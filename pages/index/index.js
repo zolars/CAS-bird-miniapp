@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    resultset: ["../../resources/temp1.png", "../../resources/temp2.png", "../../resources/temp3.png"]
+    resultset: ["../../images/temp1.jpeg", "../../images/temp2.jpeg", "../../images/temp3.jpeg"]
   },
 
   mapButton: function (e) {

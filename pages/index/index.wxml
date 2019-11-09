@@ -1,4 +1,6 @@
 <!-- index.wxml -->
+<navigationBar title="{{title}}" loading="{{true}}" home="{{true}}" back="{{true}}"></navigationBar>
+
 <view class="main-container">
   <view class="pic-container">
     <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="true" interval="3000" duration="1000">
@@ -14,28 +16,14 @@
     </swiper>
   </view>
 
-<view class="about-container"> 
-</view>
+  <view class="about-container">
+  </view>
 
-<text class="poem-container" decode="{{true}}" space="{{true}}">
+  <text class="poem-container" decode="{{true}}" space="{{true}}">
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 云中谁寄锦书来，\n 
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 雁字回时，月满西楼。
-</text>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 雁字回时，月满西楼。</text>
 
-<view class="btn-area">
-      <button bindtap="aboutButton" class="about-container-button">关于</button>
-  </view> 
-
-  <!-- <view class="map-container">
-    <button bindtap="mapButton" class="map-container-button">查看地图</button>
+  <view class="btn-area">
+    <button bindtap="aboutButton" class="about-container-button">关于</button>
   </view>
-  <view class="leftright-container">
-    <view class="knowledge-container">
-      <button bindtap="knowledgeButton" class="knowledge-container-button">科普知识</button>
-    </view>
-    <view class="about-container">
-      <button bindtap="aboutButton" class="about-container-button">关于</button>
-    </view>
-  </view>
- -->
- </view>
+</view>

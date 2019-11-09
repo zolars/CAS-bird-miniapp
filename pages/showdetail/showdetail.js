@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultBindex: null,  //"../../resources/label/003.jpg",
+    resultBindex: null,  //"../../images/label/003.jpg",
     showId: null,
 
     birdInfoMap: {

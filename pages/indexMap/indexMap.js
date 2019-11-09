@@ -12,19 +12,19 @@ Page({
     markers:[{
       latitude: -39.540000,
       longtitude: 116.230000,
-      iconPath: "/resources/location-fill.png"
+      iconPath: "/images/location-fill.png"
     },{
         latitude: 39.540000,
         longtitude: -116.230000,
-        iconPath: "/resources/location-fill.png"
+        iconPath: "/images/location-fill.png"
     },{
         latitude: 39.540000,
         longtitude: 116.230000,
-        iconPath: "/resources/location-fill.png"
+        iconPath: "/images/location-fill.png"
     },{
         latitude: -39.540000,
         longtitude: -116.230000,
-        iconPath: "/resources/location-fill.png"
+        iconPath: "/images/location-fill.png"
     }]
   },
 

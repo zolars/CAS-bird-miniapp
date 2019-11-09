@@ -8,28 +8,13 @@
     "pages/aboutUs/aboutUs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#008000",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "水鸟识别",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#000000",
-    "selectedColor": "#439057",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "resources/homepage-picture.png",
-        "selectedIconPath": "resources/homepage-picture-fill.png"
-      },
-      {
-        "pagePath": "pages/choosepicture/choosepicture",
-        "text": "相册识别",
-        "iconPath": "resources/choose-picture.png",
-        "selectedIconPath": "resources/choose-picture-fill.png"
-      }
-    ]
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom"
   },
   "networkTimeout": {
     "request": 10000,

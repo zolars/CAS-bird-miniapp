@@ -1,6 +1,9 @@
 <!--pages/aboutUs/aboutUs.wxml-->
-
 <view class="attrs">
+  <image class="show-image" src="../../images/iscaslogo.png"></image>
+  <text>\n</text>
+  <text>\n</text>
+  <text>\n</text>
   <text class="key">小程序简介</text>
   <text class="item" decode="{{true}}" space="{{true}}">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水鸟识别小程序可识别164种水鸟,由“地球大数据科学工程CASEarth”先导专项支持，由中科院软件所天基综合信息系统重点实验室（Science & Technology on Integrated Infomation System Laboratory）开发，数据由中科院地理所提供。\n
@@ -11,12 +14,12 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 训练集：8593个样本；测试集：2149个样本\n 
   </text>
 
-   <text class="key">方法介绍</text>
+  <text class="key">方法介绍</text>
   <text class="item" decode="{{true}}" space="{{true}}">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 采用Bilinear CNN网络。\n 
   </text>
 
-   <text class="key">效果介绍</text>
+  <text class="key">效果介绍</text>
   <text class="item" decode="{{true}}" space="{{true}}">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 精度：87.68%（Test accuracy）\n 
   </text>

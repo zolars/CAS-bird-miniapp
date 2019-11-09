@@ -5,6 +5,7 @@
   font-family: "楷体";
   color: #000; 
   padding-left: 3%;
+  padding-top:1%;
 }
 
 .item{
@@ -12,4 +13,10 @@
   font-family: "楷体";
   color: #777; 
   padding-left: 5%;
+}
+
+.show-image {
+  padding-top: 10vh;
+  width: 80%;
+  height: 6vh;
 }

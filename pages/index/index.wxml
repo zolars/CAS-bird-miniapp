@@ -1,17 +1,17 @@
 <!-- index.wxml -->
-<navigationBar title="{{title}}" loading="{{true}}" home="{{true}}" back="{{true}}"></navigationBar>
+<plus_button></plus_button>
 
 <view class="main-container">
   <view class="pic-container">
-    <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="true" interval="3000" duration="1000">
+    <swiper class="swiper-container" autoplay="{{true}}" circular="{{true}}" indicator-dots="{{false}}" interval="3000" duration="1000">
       <swiper-item>
-        <image class="swiper-image" src="{{resultset[0]}}" mode="scaleToFill"></image>
+        <image class="swiper-image" src="{{pic[0]}}" mode="scaleToFill"></image>
       </swiper-item>
       <swiper-item>
-        <image class="swiper-image" src="{{resultset[1]}}" mode="scaleToFill"></image>
+        <image class="swiper-image" src="{{pic[1]}}" mode="scaleToFill"></image>
       </swiper-item>
       <swiper-item>
-        <image class="swiper-image" src="{{resultset[2]}}" mode="scaleToFill"></image>
+        <image class="swiper-image" src="{{pic[2]}}" mode="scaleToFill"></image>
       </swiper-item>
     </swiper>
   </view>

@@ -1,0 +1,39 @@
+.takePicture-button {
+  height: 7.5vh;
+  width: 7.5vh;
+  background-color: #fff;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 20vh;
+  right: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.takePicture-icon {
+  padding-top: -3rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.chooseImage-button {
+  height: 7.5vh;
+  width: 7.5vh;
+  background-color: #fff;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 10vh;
+  right: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.chooseImage-icon {
+  padding-top: 0rpx;
+  width: 80rpx;
+  height: 80rpx;
+}

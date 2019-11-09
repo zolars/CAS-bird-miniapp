@@ -16,6 +16,7 @@
 }
 
 .show-image {
+  padding-left: 10%;
   padding-top: 10vh;
   width: 80%;
   height: 6vh;

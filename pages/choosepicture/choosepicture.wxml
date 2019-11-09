@@ -1,5 +1,0 @@
-<!-- pages/choosepicture/choosepicture.wxml -->
-<view>
-  <image style="width: 100%; height: 550px; background-color: #eeeeee;" src="{{tempPic}}"></image>
-  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="chooseImage">Click to upload an image</button>
-</view>

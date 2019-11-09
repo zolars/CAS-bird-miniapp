@@ -4,10 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    resultset: ["../../images/temp1.jpeg", "../../images/temp2.jpeg", "../../images/temp3.jpeg"]
+    pic: ["../../images/temp1.jpeg", "../../images/temp2.jpeg", "../../images/temp3.jpeg"]
   },
 
-  mapButton: function (e) {
+  mapButton: function(e) {
     wx.navigateTo({
       url: "../indexMap/indexMap",
     })
@@ -29,11 +29,9 @@ Page({
     })
   },
 
-  aboutButton: function () {
-    wx.navigateTo(
-      { url: "../aboutUs/aboutUs"})
+  aboutButton: function() {
+    wx.navigateTo({
+      url: "../aboutUs/aboutUs"
+    })
   }
-
-
-
 })

@@ -1,23 +1,7 @@
 /* pages/aboutUs/aboutUs.wxss */
 
-.key{
-  font-size: 40rpx;
-  font-family: "楷体";
-  color: #000; 
-  padding-left: 3%;
-  padding-top:1%;
-}
-
-.item{
-  font-size: 28rpx;
-  font-family: "楷体";
-  color: #777; 
-  padding-left: 5%;
-}
-
 .show-image {
-  padding-left: 10%;
-  padding-top: 10vh;
-  width: 80%;
-  height: 6vh;
+  padding-top: 5vh;
+  width: 100%;
+  height: 10vh;
 }

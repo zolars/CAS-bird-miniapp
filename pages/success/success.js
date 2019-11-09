@@ -40,7 +40,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const data = JSON.parse(options.data);
+    const data = JSON.parse(options.data["detected"][0][1]);
     const birdData = require("../../utils/data.js").birdData()
 
     const id0 = data[0]["birdNameCN"];

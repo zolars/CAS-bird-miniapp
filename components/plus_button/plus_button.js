@@ -47,11 +47,12 @@ Component({
               userId: 1234567
             },
             success(res) {
-              if (JSON.parse(res.data)[0]["birdNum"] == 0) {
-                if (JSON.parse(res.data)[0]["detected"].length > 0) {
+              console.log(JSON.parse(res.data));
+              if (!JSON.parse(res.data)["birdExists"]) {
+                if (JSON.parse(res.data)["detected"] != {}) {
                   var text = ""
-                  for (var obj in JSON.parse(res.data)[0]["detected"]) {
-                    text += JSON.parse(res.data)[0]["detected"][obj] + ", "
+                  for (var obj in JSON.parse(res.data)["detected"]) {
+                    text += obj + ", "
                   }
                   wx.showModal({
                     title: "没找到水鸟",

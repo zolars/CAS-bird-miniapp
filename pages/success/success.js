@@ -9,11 +9,11 @@ Page({
       text: "aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来"
     }],
     tempPic: null,
-    resultAindex: null,
-    resultBindex: null,
-    resultCindex: null,
-    resultDindex: null,
-    resultEindex: null,
+    resultApic: null,
+    resultBpic: null,
+    resultCpic: null,
+    resultDpic: null,
+    resultEpic: null,
     resultAname: null,
     resultBname: null,
     resultCname: null,
@@ -41,7 +41,7 @@ Page({
    */
   onLoad: function(options) {
     const data = JSON.parse(options.data["detected"][0][1]);
-    const birdData = require("../../utils/data.js").birdData()
+    const birdData = require("../../utils/data.js").birdData();
 
     const id0 = data[0]["birdNameCN"];
     const id1 = data[1]["birdNameCN"];
@@ -50,11 +50,11 @@ Page({
     const id4 = data[4]["birdNameCN"];
 
     this.setData({
-      resultAindex: birdData[id0]["pic"],
-      resultBindex: birdData[id1]["pic"],
-      resultCindex: birdData[id2]["pic"],
-      resultDindex: birdData[id3]["pic"],
-      resultEindex: birdData[id4]["pic"],
+      resultApic: birdData[id0]["pic"],
+      resultBpic: birdData[id1]["pic"],
+      resultCpic: birdData[id2]["pic"],
+      resultDpic: birdData[id3]["pic"],
+      resultEpic: birdData[id4]["pic"],
 
       resultAname: birdData[id0]["英文名"],
       resultBname: birdData[id1]["英文名"],

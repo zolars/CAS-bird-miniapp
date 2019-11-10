@@ -1,5 +1,10 @@
 {
-  "usingComponents": {},
+  "navigationBarTitleText": "识别结果",
+  "usingComponents": {
+    "wux-tabs":"/components/tabs/index",
+    "wux-tab": "/components/tab/index",
+    "wux-badge": "/components/badge/index"
+  },
   "navigationStyle": "default",
   "disableScroll": true
 }

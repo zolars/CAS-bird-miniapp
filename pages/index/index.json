@@ -2,5 +2,6 @@
   "usingComponents": {
     "wux-fab-button": "../../components/fab-button/index"
   },
-  "disableScroll": true
+  "disableScroll": true,
+  "navigationBarTextStyle": "white"
 }

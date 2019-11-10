@@ -127,7 +127,7 @@ Page({
           }
 
         } else {
-
+          const results = res.data;
           // Handle the image storage
           const fs = wx.getFileSystemManager();
           fs.saveFile({
@@ -136,7 +136,7 @@ Page({
               console.log('Success to give a image cache', res.savedFilePath);
               wx.setStorageSync('image_cache', res.savedFilePath);
               wx.navigateTo({
-                url: "/pages/results/results?data=" + res.data
+                url: "/pages/results/results?data=" + results
               });
             },
             fail(res) {

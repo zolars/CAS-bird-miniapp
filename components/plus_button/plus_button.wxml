@@ -1,8 +1,0 @@
-<!--圆形点击框  -->
-<view class="takePicture-button" bindtap="getImage" data-type="camera">
-    <image class="takePicture-icon" src="../../images/takePicture-fill.png"></image>
-</view>
-
-<view class="chooseImage-button" bindtap="getImage" data-type="ablum">
-    <image class="chooseImage-icon" src="../../images/chooseImage-fill.png"></image>
-</view>

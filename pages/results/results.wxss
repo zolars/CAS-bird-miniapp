@@ -1,1 +1,4 @@
 /* pages/results/results.wxss */
+.show-image {
+  padding-top: 5vh;
+}

@@ -22,6 +22,8 @@ const buttons = [{
 Page({
 
   data: {
+    imageURL: null,
+    imageFile: null,
     pic: ["../../images/temp1.jpeg", "../../images/temp2.jpeg", "../../images/temp3.jpeg"],
 
     types: ['topLeft', 'topRight', 'bottomLeft', 'bottomRight', 'center'],
@@ -36,37 +38,118 @@ Page({
     buttons,
   },
 
-  onClick(e) {
-    if (e.detail.index == 0) {
+  onClick: function(e) {
+    var that = this;
+    const method = e.detail.index;
+    if (method == 0) {
       wx.chooseImage({
         count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['camera'],
         success(res) {
-          const tempFilePaths = res.tempFilePaths
-          console.log("Done camera");
+          that.imageURL = res.tempFiles[0].path;
+          that.imageFile = res.tempFiles[0];
+          that.recognition();
         }
       })
-    } else if (e.detail.index == 1) {
+    } else if (method == 1) {
       wx.chooseImage({
         count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['album'],
         success(res) {
-          const tempFilePaths = res.tempFilePaths
-          console.log("Done album");
+          that.imageURL = res.tempFiles[0].path;
+          that.imageFile = res.tempFiles[0];
+          that.recognition();
         }
       })
-    } else if (e.detail.index == 2) {
+    } else if (method == 2) {
       wx.chooseMessageFile({
-        count: 10,
+        count: 1,
         type: 'image',
         success(res) {
-          const tempFilePaths = res.tempFilePaths
-          console.log("Done message");
+          that.imageURL = res.tempFiles[0].path;
+          that.imageFile = res.tempFiles[0];
+          that.recognition();
         }
       })
     }
+  },
+
+  recognition: function() {
+    var that = this;
+    console.log(this.imageURL);
+
+    wx.showToast({
+      title: '努力识别中',
+      icon: 'loading',
+      mask: true,
+      duration: 20000,
+      success: function(res) {
+        console.log(res);
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    });
+
+    wx.uploadFile({
+      url: "https://birdid.iscas.ac.cn:8080/",
+      header: {
+        "content-type": "multipart/form-data" // 默认值
+      },
+      filePath: this.imageURL,
+      name: "file",
+      formData: {
+        userId: 1234567
+      },
+      success(res) {
+        console.log(JSON.parse(res.data));
+        wx.hideToast();
+
+        if (!JSON.parse(res.data)["birdExists"]) {
+          if (JSON.stringify(JSON.parse(res.data)["detected"]) != "{}") {
+            var text = ""
+            for (var obj in JSON.parse(res.data)["detected"]) {
+              text += obj + ", "
+            }
+            wx.showModal({
+              title: "没找到水鸟",
+              content: "图片中似乎没有水鸟? 它看上去是: " + text.slice(0, -2),
+              showCancel: false
+            });
+          } else {
+            wx.showModal({
+              title: "没找到水鸟",
+              content: "图片中似乎没有水鸟? ",
+              showCancel: false
+            });
+          }
+
+        } else {
+
+          // Handle the image storage
+          const fs = wx.getFileSystemManager();
+          fs.saveFile({
+            tempFilePath: that.imageURL,
+            success(res) {
+              console.log('Success to give a image cache', res.savedFilePath);
+              wx.setStorageSync('image_cache', res.savedFilePath);
+              wx.navigateTo({
+                url: "/pages/results/results?data=" + res.data
+              });
+            },
+            fail(res) {
+              console.log("Fail to give a image cache");
+            }
+          });
+        }
+      },
+      fail(res) {
+        console.log("Fail. Log: " + res);
+        wx.hideToast();
+      }
+    });
   },
 
   mapButton: function(e) {

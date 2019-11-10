@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "鸟类知识",
+  "usingComponents": {},
+  "navigationStyle": "default"
 }

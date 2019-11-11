@@ -6,8 +6,9 @@
   height: 10vh;
 }
 
-.show-image image {
-  height: 600rpx;
+.show-image canvas {
+  height: 800rpx;
+  justify-content: center;
 }
 
 .result{

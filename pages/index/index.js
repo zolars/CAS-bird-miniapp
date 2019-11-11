@@ -58,6 +58,7 @@ Page({
         sizeType: ['original', 'compressed'],
         sourceType: ['album'],
         success(res) {
+          console.log(res);
           that.imageURL = res.tempFiles[0].path;
           that.imageFile = res.tempFiles[0];
           that.recognition();

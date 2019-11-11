@@ -1,17 +1,22 @@
 <view class="page">
-  <view class="page__hd">
-    <view class="show-image">
-      <image class="in-class" src="{{imageURL}}" mode="aspectFit" />
-    </view>
+
+  <view class="show-image">
+    <canvas bindtap="onCanvas" class="in-class" canvas-id="myCanvas" style="height:450px"/>
+  </view>
+
+
+  <view style="padding-top:2vh">
+    <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
+      <view slot="prev">Prev</view>
+      <view slot="next">Next</view>
+    </wux-pagination>
   </view>
 
   <view class="page__bd">
-
     <view class="container" style="padding-top:31vh;">
       <view class="divLine">
       </view>
     </view>
-
     <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
       <block wx:for="{{ results }}" wx:key="key">
         <wux-tab key="{{ item.key }}" title="{{ item.key }}"></wux-tab>
@@ -32,7 +37,7 @@
               <view class="page__title">{{ item.nameEN }}</view>
 
               <view class="page__desc">识别置信率: </view>
-              <view class="page__title">{{ item.probability }}</view>
+              <view class="page__title">{{ item.probability }}%</view>
 
               <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">点击查看详情</navigator>
             </view>

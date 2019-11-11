@@ -5,18 +5,14 @@
   </view>
 
 
-  <view style="padding-top:2vh">
+  <view style="padding-top:35vh">
     <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
-      <view slot="prev">Prev</view>
-      <view slot="next">Next</view>
+      <view slot="prev">上一个</view>
+      <view slot="next">下一个</view>
     </wux-pagination>
   </view>
 
   <view class="page__bd">
-    <view class="container" style="padding-top:31vh;">
-      <view class="divLine">
-      </view>
-    </view>
     <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
       <block wx:for="{{ results }}" wx:key="key">
         <wux-tab key="{{ item.key }}" title="{{ item.key }}"></wux-tab>

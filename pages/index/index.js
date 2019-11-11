@@ -39,7 +39,7 @@ Page({
   },
 
   onClick: function(e) {
-    var that = this;
+    let that = this;
     const method = e.detail.index;
     if (method == 0) {
       wx.chooseImage({

@@ -7,8 +7,8 @@
 
   <view style="padding-top:35vh">
     <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
-      <view slot="prev">上一个</view>
-      <view slot="next">下一个</view>
+      <view slot="prev">Prev</view>
+      <view slot="next">Next'</view>
     </wux-pagination>
   </view>
 

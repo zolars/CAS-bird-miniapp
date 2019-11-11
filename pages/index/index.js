@@ -141,7 +141,7 @@ Page({
               });
             },
             fail(res) {
-              console.log("Fail to give a image cache");
+              console.log("Fail to give a image cache", res);
             }
           });
         }
@@ -179,5 +179,27 @@ Page({
     wx.navigateTo({
       url: "../aboutUs/aboutUs"
     })
-  }
+  },
+
+  onLoad: function(option) {
+    wx.getSavedFileList({
+      success(res) {
+        if (res.fileList.length > 0) {
+          wx.removeSavedFile({
+            filePath: res.fileList[0].filePath,
+            complete(res) {
+              console.log(res)
+            }
+          })
+        }
+      }
+    })
+
+    wx.clearStorage()
+    try {
+      wx.clearStorageSync()
+    } catch (e) {
+      // Do something when catch error
+    }
+  },
 })

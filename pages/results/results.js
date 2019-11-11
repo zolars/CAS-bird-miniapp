@@ -162,14 +162,50 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
+    wx.getSavedFileList({
+      success(res) {
+        if (res.fileList.length > 0) {
+          wx.removeSavedFile({
+            filePath: res.fileList[0].filePath,
+            complete(res) {
+              console.log(res)
+            }
+          })
+        }
+      }
+    })
 
+    wx.clearStorage()
+    try {
+      wx.clearStorageSync()
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
+    wx.getSavedFileList({
+      success(res) {
+        if (res.fileList.length > 0) {
+          wx.removeSavedFile({
+            filePath: res.fileList[0].filePath,
+            complete(res) {
+              console.log(res)
+            }
+          })
+        }
+      }
+    })
 
+    wx.clearStorage()
+    try {
+      wx.clearStorageSync()
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**

@@ -105,11 +105,15 @@ Page({
           ctx.strokeRect(0 + 300 * coordinates[0], (350 - temp_height) / 2 + temp_height * coordinates[1], 300 * coordinates[2], temp_height * coordinates[3])
           ctx.draw()
         }
-      }
+      },
+      fail: function(res) {
+        console.log("drawRect Fail: ", res)
+      },
     })
   },
 
   onChange: function(e) {
+    console.log(e)
     const results = this.data.data[e.detail.current - 1][1]
     const birdData = require("../../utils/data.js").birdData()
     this.setData({
@@ -162,25 +166,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    wx.getSavedFileList({
-      success(res) {
-        if (res.fileList.length > 0) {
-          wx.removeSavedFile({
-            filePath: res.fileList[0].filePath,
-            complete(res) {
-              console.log(res)
-            }
-          })
-        }
-      }
-    })
 
-    wx.clearStorage()
-    try {
-      wx.clearStorageSync()
-    } catch (e) {
-      // Do something when catch error
-    }
   },
 
   /**

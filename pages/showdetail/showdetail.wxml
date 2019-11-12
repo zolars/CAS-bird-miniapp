@@ -1,7 +1,7 @@
 <!-- pages/showdetail/showdetail.wxml -->
 <view class="layout_horizontal">
   <view>
-    <image class="show-image" src="{{resultBindex}}"></image>
+    <image class="show-image" src="{{resultBindex}}" mode="aspectFit"></image>
   </view>
 </view>
 <view class="attrs" wx:for="{{birdInfoMap.attrs}}" wx:for-index="key">
@@ -9,6 +9,7 @@
   <text class="item" decode="{{true}}" space="{{true}}">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{item}}
   </text>
+  <text>\n</text>
 </view>
 <view class="layout_horizontal">
   <text class="foot-item">数据来源</text>

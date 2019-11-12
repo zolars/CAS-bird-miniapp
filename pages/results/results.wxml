@@ -1,14 +1,14 @@
 <view class="page">
 
   <view class="show-image">
-    <canvas bindtap="onCanvas" class="in-class" canvas-id="myCanvas" style="height:450px"/>
+    <canvas bindtap="onCanvas" class="in-class" canvas-id="myCanvas" style="height:450px" />
   </view>
 
 
   <view style="padding-top:35vh">
     <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
       <view slot="prev">Prev</view>
-      <view slot="next">Next'</view>
+      <view slot="next">Next</view>
     </wux-pagination>
   </view>
 
@@ -34,7 +34,8 @@
 
               <view class="page__desc">识别置信率: </view>
               <view class="page__title">{{ item.probability }}%</view>
-
+              <text>\n</text>
+              <text>\n</text>
               <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">点击查看详情</navigator>
             </view>
 

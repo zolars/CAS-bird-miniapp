@@ -107,6 +107,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '中科院软件所 - 水鸟识别',
+      desc: '由中科院软件所开发拍照水鸟识别小程序',
+      path: '/page/index/index',
+      imageUrl: '/images/temp1.jpeg',
+    }
   }
 })

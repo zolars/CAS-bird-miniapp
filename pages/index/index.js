@@ -1,4 +1,6 @@
 //index.js
+import { $wuxLoading } from '../../components/index'
+
 //获取应用实例
 const app = getApp()
 
@@ -34,22 +36,22 @@ Page({
     dirIndex: 1,
     sAngle: 0,
     eAngle: 360,
-    spaceBetween: 12,
+    spaceBetween: 14,
     buttons,
   },
 
   onClick: function(e) {
-    let that = this;
-    const method = e.detail.index;
+    let that = this
+    const method = e.detail.index
     if (method == 0) {
       wx.chooseImage({
         count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['camera'],
         success(res) {
-          that.imageURL = res.tempFiles[0].path;
-          that.imageFile = res.tempFiles[0];
-          that.recognition();
+          that.imageURL = res.tempFiles[0].path
+          that.imageFile = res.tempFiles[0]
+          that.recognition()
         }
       })
     } else if (method == 1) {
@@ -58,10 +60,10 @@ Page({
         sizeType: ['original', 'compressed'],
         sourceType: ['album'],
         success(res) {
-          console.log(res);
-          that.imageURL = res.tempFiles[0].path;
-          that.imageFile = res.tempFiles[0];
-          that.recognition();
+          console.log(res)
+          that.imageURL = res.tempFiles[0].path
+          that.imageFile = res.tempFiles[0]
+          that.recognition()
         }
       })
     } else if (method == 2) {
@@ -69,44 +71,36 @@ Page({
         count: 1,
         type: 'image',
         success(res) {
-          that.imageURL = res.tempFiles[0].path;
-          that.imageFile = res.tempFiles[0];
-          that.recognition();
+          that.imageURL = res.tempFiles[0].path
+          that.imageFile = res.tempFiles[0]
+          that.recognition()
         }
       })
     }
   },
 
   recognition: function() {
-    var that = this;
-    console.log(this.imageURL);
+    var that = this
+    console.log(this.imageURL)
 
-    wx.showToast({
-      title: '努力识别中',
-      icon: 'loading',
-      mask: true,
-      duration: 20000,
-      success: function(res) {
-        console.log(res);
-      },
-      fail: function(res) {
-        console.log(res);
-      }
-    });
+    this.$wuxLoading = $wuxLoading()
+    this.$wuxLoading.show({
+      text: '努力识别中',
+    })
 
     wx.uploadFile({
       url: "https://birdid.iscas.ac.cn:8080/",
       header: {
         "content-type": "multipart/form-data" // 默认值
       },
-      filePath: this.imageURL,
+      filePath: that.imageURL,
       name: "file",
       formData: {
         userId: 1234567
       },
       success(res) {
-        console.log(JSON.parse(res.data));
-        wx.hideToast();
+        console.log(JSON.parse(res.data))
+        that.$wuxLoading.hide()
 
         if (!JSON.parse(res.data)["birdExists"]) {
           if (JSON.stringify(JSON.parse(res.data)["detected"]) != "{}") {
@@ -118,39 +112,40 @@ Page({
               title: "没找到水鸟",
               content: "图片中似乎没有水鸟? 它看上去是: " + text.slice(0, -2),
               showCancel: false
-            });
+            })
           } else {
             wx.showModal({
               title: "没找到水鸟",
               content: "图片中似乎没有水鸟? ",
               showCancel: false
-            });
+            })
           }
 
         } else {
-          const results = res.data;
+          const results = res.data
           // Handle the image storage
-          const fs = wx.getFileSystemManager();
+          const fs = wx.getFileSystemManager()
           fs.saveFile({
             tempFilePath: that.imageURL,
             success(res) {
-              console.log('Success to give a image cache', res.savedFilePath);
-              wx.setStorageSync('image_cache', res.savedFilePath);
+              console.log('Success to give a image cache', res.savedFilePath)
+              wx.setStorageSync('image_cache', res.savedFilePath)
               wx.navigateTo({
                 url: "/pages/results/results?data=" + results
-              });
+              })
             },
             fail(res) {
-              console.log("Fail to give a image cache", res);
+              console.log("Fail to give a image cache", res)
             }
-          });
+          })
         }
       },
       fail(res) {
-        console.log("Fail. Log: " + res);
-        wx.hideToast();
+        console.log("Fail. Log: " + res)
+        that.$wuxLoading.hide()
       }
-    });
+    })
+
   },
 
   mapButton: function(e) {
@@ -230,4 +225,16 @@ Page({
       // Do something when catch error
     }
   },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+    return {
+      title: '中科院软件所 - 水鸟识别',
+      desc: '由中科院软件所开发拍照水鸟识别小程序',
+      path: '/page/index/index',
+      imageUrl: '/images/temp1.jpeg',
+    }
+  }
 })

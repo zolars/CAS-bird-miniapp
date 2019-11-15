@@ -35,7 +35,6 @@
               <view class="page__desc">识别置信率: </view>
               <view class="page__title">{{ item.probability }}%</view>
               <text>\n</text>
-              <text>\n</text>
               <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">点击查看详情</navigator>
             </view>
 

@@ -77,9 +77,19 @@ Page({
     wx.getImageInfo({
       src: imageURL,
       success: function(res) {
+
+        let imageHeight = 350
+        let imageWidth = 300
+        wx.getSystemInfo({
+          success: function(res) {
+            imageHeight = res.windowHeight / 724 * 350
+            imageWidth = res.windowWidth / 375 * 300
+          }
+        });
+
         if (res.width <= res.height) {
-          const temp_width = 350 / res.height * res.width
-          ctx.drawImage(imageURL, (300 - temp_width) / 2, 0, temp_width, 350)
+          const temp_width = imageHeight / res.height * res.width
+          ctx.drawImage(imageURL, (imageWidth - temp_width) / 2, 0, temp_width, imageHeight)
           ctx.setStrokeStyle('red')
 
           const coordinates = [
@@ -88,12 +98,12 @@ Page({
             (that.data.data[that.data.current - 1][0][2] - that.data.data[that.data.current - 1][0][0]) / res.width,
             (that.data.data[that.data.current - 1][0][3] - that.data.data[that.data.current - 1][0][1]) / res.height
           ]
-          ctx.strokeRect((300 - temp_width) / 2 + temp_width * coordinates[0], 0 + 350 * coordinates[1], temp_width * coordinates[2], 350 * coordinates[3])
+          ctx.strokeRect((imageWidth - temp_width) / 2 + temp_width * coordinates[0], 0 + imageHeight * coordinates[1], temp_width * coordinates[2], imageHeight * coordinates[3])
           ctx.draw()
 
         } else {
-          const temp_height = 300 / res.width * res.height
-          ctx.drawImage(imageURL, 0, (350 - temp_height) / 2, 300, temp_height)
+          const temp_height = imageWidth / res.width * res.height
+          ctx.drawImage(imageURL, 0, (imageHeight - temp_height) / 2, imageWidth, temp_height)
           ctx.setStrokeStyle('red')
 
           const coordinates = [
@@ -102,7 +112,7 @@ Page({
             (that.data.data[that.data.current - 1][0][2] - that.data.data[that.data.current - 1][0][0]) / res.width,
             (that.data.data[that.data.current - 1][0][3] - that.data.data[that.data.current - 1][0][1]) / res.height
           ]
-          ctx.strokeRect(0 + 300 * coordinates[0], (350 - temp_height) / 2 + temp_height * coordinates[1], 300 * coordinates[2], temp_height * coordinates[3])
+          ctx.strokeRect(0 + imageWidth * coordinates[0], (imageHeight - temp_height) / 2 + temp_height * coordinates[1], imageWidth * coordinates[2], temp_height * coordinates[3])
           ctx.draw()
         }
       },
@@ -211,11 +221,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '中科院软件所 - 水鸟识别',
       desc: '由中科院软件所开发拍照水鸟识别小程序',
-      path: '/page/index/index',
+      path: '/pages/index/index',
       imageUrl: '/images/temp1.jpeg',
     }
   }

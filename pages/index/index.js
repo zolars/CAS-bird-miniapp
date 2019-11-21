@@ -6,17 +6,17 @@ const app = getApp()
 
 const buttons = [{
     index: 'camera',
-    label: '拍照识别',
+    label: 'Camera',
     icon: "/images/camera.png",
   },
   {
     index: 'ablum',
-    label: '相册识别',
+    label: 'Album',
     icon: "/images/album.png",
   },
   {
     index: 'message',
-    label: '聊天图片识别',
+    label: 'Messages',
     icon: "/images/message.png",
   },
 ]

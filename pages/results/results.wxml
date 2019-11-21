@@ -26,16 +26,16 @@
             <image class="result-image" src="{{ item.pic }}" />
 
             <view class="result-text">
-              <view class="page__desc">中文名: </view>
+              <view class="page__desc">Chinese Name: </view>
               <view class="page__title">{{ item.key }}</view>
 
-              <view class="page__desc">英文名: </view>
+              <view class="page__desc">English Name: </view>
               <view class="page__title">{{ item.nameEN }}</view>
 
-              <view class="page__desc">识别置信率: </view>
+              <view class="page__desc">Porbability: </view>
               <view class="page__title">{{ item.probability }}%</view>
               <text>\n</text>
-              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">点击查看详情</navigator>
+              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">Show Details</navigator>
             </view>
 
           </view>

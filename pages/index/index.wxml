@@ -29,7 +29,7 @@
   <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
       <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">
-        关于
+        About
       </navigator>
     </view>
     <view class="weui-footer__text">Copyright © Institute of Software, CAS</view>

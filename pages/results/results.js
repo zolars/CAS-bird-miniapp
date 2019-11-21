@@ -10,13 +10,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(option) {
+    console.log('onLoad', option)
+
     const birdData = require("../../utils/data.js").birdData()
     const results = JSON.parse(option.data)["detected"][0][1]
-    console.log(JSON.parse(option.data)["detected"])
 
     this.setData({
       data: JSON.parse(option.data)["detected"],
-      // current: results[0].birdNameCN,
       amount: JSON.parse(option.data)["detected"].length,
       results: [{
         key: results[0].birdNameCN,
@@ -37,8 +37,9 @@ Page({
     })
   },
 
-  onTabsChange(e) {
+  onTabsChange: function(e) {
     console.log('onTabsChange', e)
+
     const {
       key
     } = e.detail
@@ -70,6 +71,8 @@ Page({
 
 
   drawRect: function() {
+    console.log('drawRect')
+
     const imageURL = wx.getStorageSync('image_cache')
     const ctx = wx.createCanvasContext('myCanvas', this)
     let that = this
@@ -123,11 +126,12 @@ Page({
   },
 
   onChange: function(e) {
-    console.log(e)
+    console.log('onChange', e)
     const results = this.data.data[e.detail.current - 1][1]
     const birdData = require("../../utils/data.js").birdData()
     this.setData({
       current: e.detail.current,
+      key: results[0].birdNameCN,
       index: results[0].birdNameCN,
       results: [{
         key: results[0].birdNameCN,
@@ -147,6 +151,7 @@ Page({
       }],
     })
 
+    // this.onTabsChange()
     this.drawRect()
 
   },

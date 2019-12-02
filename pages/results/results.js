@@ -12,8 +12,22 @@ Page({
   onLoad: function(option) {
     console.log("onLoad", option);
 
-    const birdData = require("../../utils/data.js").birdData();
+    const birdData = require("../../utils/data.js").getData("pedia");
+    const poyang = require("../../utils/data.js").getData("poyang");
     const results = JSON.parse(option.data)["detected"][0][1];
+
+    console.log();
+    if (poyang.indexOf(results[0].birdNameCN) == -1) {
+      results[0].probability = "很少出现在鄱阳湖: 0";
+    }
+    if (poyang.indexOf(results[1].birdNameCN) == -1) {
+      results[1].probability = "很少出现在鄱阳湖: 0";
+    }
+    if (poyang.indexOf(results[2].birdNameCN) == -1) {
+      results[2].probability = "很少出现在鄱阳湖: 0";
+    }
+
+    console.log(results[0].birdNameCN);
 
     this.setData({
       data: JSON.parse(option.data)["detected"],
@@ -152,7 +166,8 @@ Page({
   onChange: function(e) {
     console.log("onChange", e);
     const results = this.data.data[e.detail.current - 1][1];
-    const birdData = require("../../utils/data.js").birdData();
+    const birdData = require("../../utils/data.js").getData("pedia");
+
     this.setData({
       current: e.detail.current,
       key: results[0].birdNameCN,
@@ -247,7 +262,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: "中科院软件所 - 水鸟识别",
+      title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
       imageUrl: "/images/temp1.jpeg"

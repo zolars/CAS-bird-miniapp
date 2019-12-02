@@ -243,7 +243,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: "中科院软件所 - 水鸟识别",
+      title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
       imageUrl: "/images/temp1.jpeg"

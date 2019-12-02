@@ -34,7 +34,7 @@ Page({
   onLoad: function(options) {
     const showId = options.showId;
     console.log(showId);
-    const birdData = require("../../utils/data.js").birdData();
+    const birdData = require("../../utils/data.js").getData("pedia");
     this.setData({
       showId: showId,
       resultBindex: birdData[showId]["pic"],
@@ -95,7 +95,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: "中科院软件所 - 水鸟识别",
+      title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
       imageUrl: "/images/temp1.jpeg"

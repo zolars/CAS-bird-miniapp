@@ -9,22 +9,7 @@ Page({
 
     birdInfoMap: {
       number: "Null",
-      attrs: {
-        中文名: "Null",
-        英文名: "Null",
-        拉丁文名: "Null",
-        分类: "Null",
-        "IUCN 红色名录等级": "Null",
-        描述: "Null",
-        虹膜: "Null",
-        嘴: "Null",
-        脚: "Null",
-        叫声: "Null",
-        分布范围: "Null",
-        分布状况: "Null",
-        习性: "Null",
-        俗名: "Null"
-      }
+      attrs: null
     }
   },
 
@@ -35,27 +20,15 @@ Page({
     const showId = options.showId;
     console.log(showId);
     const birdData = require("../../utils/data.js").getData("pedia");
+    var detail = birdData[showId];
+    var pic = detail.pic;
+    delete detail.pic;
     this.setData({
       showId: showId,
-      resultBindex: birdData[showId]["pic"],
+      resultBindex: pic,
       birdInfoMap: {
         number: "Null",
-        attrs: {
-          中文名: showId,
-          英文名: birdData[showId]["英文名"],
-          拉丁文名: birdData[showId]["拉丁文名"],
-          分类: birdData[showId]["分类"],
-          "IUCN 红色名录等级": birdData[showId]["IUCN 红色名录等级"],
-          描述: birdData[showId]["描述"],
-          虹膜: birdData[showId]["虹膜"],
-          嘴: birdData[showId]["嘴"],
-          脚: birdData[showId]["脚"],
-          叫声: birdData[showId]["叫声"],
-          分布范围: birdData[showId]["分布范围"],
-          分布状况: birdData[showId]["分布状况"],
-          习性: birdData[showId]["习性"],
-          俗名: birdData[showId]["俗名"]
-        }
+        attrs: detail
       }
     });
   },

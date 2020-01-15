@@ -1,8 +1,7 @@
 <!-- index.wxml -->
 <wux-loading id="wux-loading" />
-<wux-fab-button position="{{ types[typeIndex] }}" theme="{{ colors[colorIndex] }}" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:click="onClick"
-  bind:camera="getCameraImage" bind:album="getAlbumImage" bind:message="getMessageImage" />
-
+<wux-fab-button-image position="{{ types[typeIndex] }}" theme="{{ colors[colorIndex] }}" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:click="onClick" bind:camera="getCameraImage" bind:album="getAlbumImage" bind:message="getMessageImage" />
+<wux-fab-button-search position="{{ types[typeIndex] }}" theme="royal" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="" buttons="" bind:searchButtonClick="onClick" />
 <view class="main-container">
   <view class="pic-container">
     <swiper class="swiper-container" autoplay="{{true}}" circular="{{true}}" indicator-dots="{{false}}" interval="3000" duration="1000">
@@ -17,22 +16,15 @@
       </swiper-item>
     </swiper>
   </view>
-
-  <view class="about-container">
-  </view>
-
+  <view class="about-container"></view>
   <text class="poem-container" decode="{{true}}" space="{{true}}">
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 云中谁寄锦书来，
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 云中谁寄锦书来，
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 雁字回时，月满西楼。
   </text>
-
   <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
-      <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">
-        About
-      </navigator>
+      <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">About</navigator>
     </view>
     <view class="weui-footer__text">Copyright © Institute of Software, CAS</view>
   </view>
-
 </view>

@@ -22,7 +22,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
+	"libVersion": "2.10.0",
 	"appid": "wx62ff2f807b3dddb9",
 	"projectname": "cas-bird-miniapp",
 	"debugOptions": {

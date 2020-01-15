@@ -45,7 +45,7 @@ Page({
       "royal",
       "dark"
     ],
-    colorIndex: 4,
+    colorIndex: 7,
     dirs: ["horizontal", "vertical", "circle"],
     dirIndex: 1,
     sAngle: 0,
@@ -90,6 +90,8 @@ Page({
           that.recognition();
         }
       });
+    } else if (method == -1) {
+      console.log("Clicked!", e);
     }
   },
 

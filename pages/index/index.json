@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "wux-fab-button": "/components/fab-button/index",
+    "wux-fab-button-image": "/components/fab-button-image/index",
+    "wux-fab-button-search": "/components/fab-button-search/index",
     "wux-button": "/components/button/index",
     "wux-loading": "/components/loading/index"
   },

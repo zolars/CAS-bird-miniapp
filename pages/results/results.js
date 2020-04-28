@@ -3,7 +3,7 @@ Page({
     data: null,
     amount: 0,
     current: 1,
-    results: null
+    results: null,
   },
 
   /**
@@ -37,21 +37,21 @@ Page({
           key: results[0].birdNameCN,
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
-          pic: birdData[results[0].birdNameCN]["pic"]
+          pic: birdData[results[0].birdNameCN]["pic"],
         },
         {
           key: results[1].birdNameCN,
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
-          pic: birdData[results[1].birdNameCN]["pic"]
+          pic: birdData[results[1].birdNameCN]["pic"],
         },
         {
           key: results[2].birdNameCN,
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
-          pic: birdData[results[2].birdNameCN]["pic"]
-        }
-      ]
+          pic: birdData[results[2].birdNameCN]["pic"],
+        },
+      ],
     });
   },
 
@@ -59,11 +59,11 @@ Page({
     console.log("onTabsChange", e);
 
     const { key } = e.detail;
-    const index = this.data.results.map(n => n.key).indexOf(key);
+    const index = this.data.results.map((n) => n.key).indexOf(key);
 
     this.setData({
       key,
-      index
+      index,
     });
   },
 
@@ -75,7 +75,7 @@ Page({
     if (!!source) {
       this.setData({
         key,
-        index
+        index,
       });
     }
   },
@@ -96,7 +96,7 @@ Page({
           success: function(res) {
             imageHeight = (res.windowHeight / 724) * 350;
             imageWidth = (res.windowWidth / 375) * 300;
-          }
+          },
         });
 
         if (res.width <= res.height) {
@@ -118,7 +118,7 @@ Page({
               res.width,
             (that.data.data[that.data.current - 1][0][3] -
               that.data.data[that.data.current - 1][0][1]) /
-              res.height
+              res.height,
           ];
           ctx.strokeRect(
             (imageWidth - temp_width) / 2 + temp_width * coordinates[0],
@@ -146,7 +146,7 @@ Page({
               res.width,
             (that.data.data[that.data.current - 1][0][3] -
               that.data.data[that.data.current - 1][0][1]) /
-              res.height
+              res.height,
           ];
           ctx.strokeRect(
             0 + imageWidth * coordinates[0],
@@ -159,7 +159,7 @@ Page({
       },
       fail: function(res) {
         console.log("drawRect Fail: ", res);
-      }
+      },
     });
   },
 
@@ -177,21 +177,21 @@ Page({
           key: results[0].birdNameCN,
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
-          pic: birdData[results[0].birdNameCN]["pic"]
+          pic: birdData[results[0].birdNameCN]["pic"],
         },
         {
           key: results[1].birdNameCN,
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
-          pic: birdData[results[1].birdNameCN]["pic"]
+          pic: birdData[results[1].birdNameCN]["pic"],
         },
         {
           key: results[2].birdNameCN,
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
-          pic: birdData[results[2].birdNameCN]["pic"]
-        }
-      ]
+          pic: birdData[results[2].birdNameCN]["pic"],
+        },
+      ],
     });
 
     // this.onTabsChange()
@@ -201,7 +201,7 @@ Page({
   onCanvas: function() {
     const imageURL = wx.getStorageSync("image_cache");
     wx.previewImage({
-      urls: [imageURL]
+      urls: [imageURL],
     });
   },
 
@@ -233,10 +233,10 @@ Page({
             filePath: res.fileList[0].filePath,
             complete(res) {
               console.log(res);
-            }
+            },
           });
         }
-      }
+      },
     });
 
     wx.clearStorage();
@@ -265,7 +265,7 @@ Page({
       title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
-      imageUrl: "/images/temp1.jpeg"
+      imageUrl: "/images/temp1.jpeg",
     };
-  }
+  },
 });

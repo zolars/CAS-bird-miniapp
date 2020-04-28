@@ -7,7 +7,7 @@
 <view class="attrs" wx:for="{{birdInfoMap.attrs}}" wx:for-index="key">
   <text class="key">{{key}}</text>
   <text class="item" decode="{{true}}" space="{{true}}">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{item}}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{item}}
   </text>
   <text>\n</text>
 </view>

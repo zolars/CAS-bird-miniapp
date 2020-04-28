@@ -4,13 +4,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultBindex: null, //"../../images/label/003.jpg",
+    resultIndex: null, //"../../images/label/003.jpg",
     showId: null,
 
     birdInfoMap: {
       number: "Null",
-      attrs: null
-    }
+      attrs: null,
+    },
   },
 
   /**
@@ -20,16 +20,26 @@ Page({
     const showId = options.showId;
     console.log(showId);
     const birdData = require("../../utils/data.js").getData("pedia");
-    var detail = birdData[showId];
+    const newbirdData = require("../../utils/data.js").getData("new_pedia");
+
+    var detail = {};
+
+    for (var attr in newbirdData[showId]) {
+      detail[attr] = newbirdData[showId][attr];
+    }
+    for (var attr in birdData[showId]) {
+      detail[attr] = birdData[showId][attr];
+    }
+
     var pic = detail.pic;
     delete detail.pic;
     this.setData({
       showId: showId,
-      resultBindex: pic,
+      resultIndex: pic,
       birdInfoMap: {
         number: "Null",
-        attrs: detail
-      }
+        attrs: detail,
+      },
     });
   },
 
@@ -71,7 +81,7 @@ Page({
       title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
-      imageUrl: "/images/temp1.jpeg"
+      imageUrl: "/images/temp1.jpeg",
     };
-  }
+  },
 });

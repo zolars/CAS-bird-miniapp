@@ -11,24 +11,24 @@ Page({
       {
         latitude: -39.54,
         longtitude: 116.23,
-        iconPath: "/images/location-fill.png"
+        iconPath: "/images/location-fill.png",
       },
       {
         latitude: 39.54,
         longtitude: -116.23,
-        iconPath: "/images/location-fill.png"
+        iconPath: "/images/location-fill.png",
       },
       {
         latitude: 39.54,
         longtitude: 116.23,
-        iconPath: "/images/location-fill.png"
+        iconPath: "/images/location-fill.png",
       },
       {
         latitude: -39.54,
         longtitude: -116.23,
-        iconPath: "/images/location-fill.png"
-      }
-    ]
+        iconPath: "/images/location-fill.png",
+      },
+    ],
   },
 
   /**
@@ -74,7 +74,7 @@ Page({
       title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
-      imageUrl: "/images/temp1.jpeg"
+      imageUrl: "/images/temp1.jpeg",
     };
-  }
+  },
 });

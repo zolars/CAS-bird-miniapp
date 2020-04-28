@@ -1,17 +1,13 @@
 <view class="page">
-
   <view class="show-image">
     <canvas bindtap="onCanvas" class="in-class" canvas-id="myCanvas" style="height:450px" />
   </view>
-
-
   <view style="padding-top:35vh">
     <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
       <view slot="prev">Prev</view>
       <view slot="next">Next</view>
     </wux-pagination>
   </view>
-
   <view class="page__bd">
     <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
       <block wx:for="{{ results }}" wx:key="key">
@@ -22,22 +18,19 @@
       <block wx:for="{{ results }}" wx:key="key">
         <swiper-item>
           <view class="result">
-
             <image class="result-image" src="{{ item.pic }}" />
-
             <view class="result-text">
-              <view class="page__desc">中文名: </view>
+              <view class="page__desc">中文名:</view>
               <view class="page__title">{{ item.key }}</view>
-
-              <view class="page__desc">英文名: </view>
+              <view class="page__desc">英文名:</view>
               <view class="page__title">{{ item.nameEN }}</view>
-
-              <view class="page__desc">置信率: </view>
+              <view class="page__desc">置信率:</view>
               <view class="page__title">{{ item.probability }}%</view>
               <text>\n</text>
-              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">查看详情</navigator>
+              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">
+                查看详情
+              </navigator>
             </view>
-
           </view>
         </swiper-item>
       </block>

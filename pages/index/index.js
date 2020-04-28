@@ -8,18 +8,18 @@ const buttons = [
   {
     index: "camera",
     label: "拍照识别",
-    icon: "/images/camera.png"
+    icon: "/images/camera.png",
   },
   {
     index: "ablum",
     label: "相册识别",
-    icon: "/images/album.png"
+    icon: "/images/album.png",
   },
   {
     index: "message",
     label: "聊天图片识别",
-    icon: "/images/message.png"
-  }
+    icon: "/images/message.png",
+  },
 ];
 
 Page({
@@ -29,7 +29,7 @@ Page({
     pic: [
       "../../images/temp1.jpeg",
       "../../images/temp2.jpeg",
-      "../../images/temp3.jpeg"
+      "../../images/temp3.jpeg",
     ],
 
     types: ["topLeft", "topRight", "bottomLeft", "bottomRight", "center"],
@@ -43,7 +43,7 @@ Page({
       "energized",
       "assertive",
       "royal",
-      "dark"
+      "dark",
     ],
     colorIndex: 7,
     dirs: ["horizontal", "vertical", "circle"],
@@ -51,7 +51,7 @@ Page({
     sAngle: 0,
     eAngle: 360,
     spaceBetween: 14,
-    buttons
+    buttons,
   },
 
   onClick: function(e) {
@@ -66,7 +66,7 @@ Page({
           that.imageURL = res.tempFiles[0].path;
           that.imageFile = res.tempFiles[0];
           that.recognition();
-        }
+        },
       });
     } else if (method == 1) {
       wx.chooseImage({
@@ -78,7 +78,7 @@ Page({
           that.imageURL = res.tempFiles[0].path;
           that.imageFile = res.tempFiles[0];
           that.recognition();
-        }
+        },
       });
     } else if (method == 2) {
       wx.chooseMessageFile({
@@ -88,7 +88,7 @@ Page({
           that.imageURL = res.tempFiles[0].path;
           that.imageFile = res.tempFiles[0];
           that.recognition();
-        }
+        },
       });
     } else if (method == -1) {
       console.log("Clicked!", e);
@@ -101,18 +101,18 @@ Page({
 
     this.$wuxLoading = $wuxLoading();
     this.$wuxLoading.show({
-      text: "努力识别中"
+      text: "努力识别中",
     });
 
     wx.uploadFile({
       url: "https://birdid.iscas.ac.cn:8080/",
       header: {
-        "content-type": "multipart/form-data" // 默认值
+        "content-type": "multipart/form-data", // 默认值
       },
       filePath: that.imageURL,
       name: "file",
       formData: {
-        userId: 1234567
+        userId: 1234567,
       },
       success(res) {
         console.log(JSON.parse(res.data));
@@ -127,13 +127,13 @@ Page({
             wx.showModal({
               title: "没找到水鸟",
               content: "图片中似乎没有水鸟? 它看上去是: " + text.slice(0, -2),
-              showCancel: false
+              showCancel: false,
             });
           } else {
             wx.showModal({
               title: "没找到水鸟",
               content: "图片中似乎没有水鸟? ",
-              showCancel: false
+              showCancel: false,
             });
           }
         } else {
@@ -146,25 +146,26 @@ Page({
               console.log("Success to give a image cache", res.savedFilePath);
               wx.setStorageSync("image_cache", res.savedFilePath);
               wx.navigateTo({
-                url: "/pages/results/results?data=" + results
+                url: "/pages/results/results?data=" + results,
               });
             },
             fail(res) {
               console.log("Fail to give a image cache", res);
-            }
+            },
           });
         }
       },
       fail(res) {
-        console.log("Fail. Log: " + res);
+        console.log("Get result Fail...");
+        console.log(res);
         that.$wuxLoading.hide();
-      }
+      },
     });
   },
 
   mapButton: function(e) {
     wx.navigateTo({
-      url: "../indexMap/indexMap"
+      url: "../indexMap/indexMap",
     });
   },
 
@@ -173,20 +174,20 @@ Page({
       url: "http://localhost:8082/JavaSdkServerWechat_Web_exploded/Startup", // 仅为示例，并非真实的接口地址
       data: {
         x: "",
-        y: ""
+        y: "",
       },
       header: {
-        "content-type": "application/json" // 默认值
+        "content-type": "application/json", // 默认值
       },
       success(res) {
         console.log(res.data);
-      }
+      },
     });
   },
 
   aboutButton: function() {
     wx.navigateTo({
-      url: "../aboutUs/aboutUs"
+      url: "../aboutUs/aboutUs",
     });
   },
 
@@ -201,10 +202,10 @@ Page({
             filePath: res.fileList[0].filePath,
             complete(res) {
               console.log(res);
-            }
+            },
           });
         }
-      }
+      },
     });
 
     wx.clearStorage();
@@ -226,10 +227,10 @@ Page({
             filePath: res.fileList[0].filePath,
             complete(res) {
               console.log(res);
-            }
+            },
           });
         }
-      }
+      },
     });
 
     wx.clearStorage();
@@ -248,7 +249,7 @@ Page({
       title: "水鸟识别 - 中科院软件所",
       desc: "由中科院软件所开发拍照水鸟识别小程序",
       path: "/pages/index/index",
-      imageUrl: "/images/temp1.jpeg"
+      imageUrl: "/images/temp1.jpeg",
     };
-  }
+  },
 });

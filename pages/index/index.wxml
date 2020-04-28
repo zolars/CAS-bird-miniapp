@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <wux-loading id="wux-loading" />
-<wux-fab-button-image position="{{ types[typeIndex] }}" theme="{{ colors[colorIndex] }}" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:click="onClick" bind:camera="getCameraImage" bind:album="getAlbumImage" bind:message="getMessageImage" />
-<wux-fab-button-search position="{{ types[typeIndex] }}" theme="royal" direction="{{ dirs[dirIndex] }}" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="" buttons="" bind:searchButtonClick="onClick" />
+<wux-fab-button-image position="bottomRight" theme="{{ colors[colorIndex] }}" direction="vertical" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" buttons="{{ recog_buttons }}" bind:click="onClick" bind:camera="getCameraImage" bind:album="getAlbumImage" bind:message="getMessageImage" />
+<wux-fab-button-search position="bottomRight" theme="{{ colors[colorIndex] }}" direction="horizontal" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" buttons="{{ search_buttons }}" bind:searchButtonClick="onClick" />
 <view class="main-container">
   <view class="pic-container">
     <swiper class="swiper-container" autoplay="{{true}}" circular="{{true}}" indicator-dots="{{false}}" interval="3000" duration="1000">

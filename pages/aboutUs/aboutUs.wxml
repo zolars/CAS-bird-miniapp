@@ -11,7 +11,7 @@
     <view class="page__desc">训练集：8593个样本；测试集：2149个样本</view>
     <view class="page__desc">\n</view>
     <view class="page__title">方法介绍</view>
-    <view class="page__desc">采用Bilinear CNN网络。</view>
+    <view class="page__desc">采用Bilinear CNN网络</view>
     <view class="page__desc">\n</view>
     <view class="page__title">效果介绍</view>
     <view class="page__desc">精度：87.68%（Test accuracy）</view>

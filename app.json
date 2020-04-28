@@ -4,12 +4,13 @@
     "pages/indexMap/indexMap",
     "pages/results/results",
     "pages/showdetail/showdetail",
+    "pages/search/search",
     "pages/aboutUs/aboutUs"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "水鸟识别",
+    "navigationBarTitleText": "识鸟 - CAS",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,

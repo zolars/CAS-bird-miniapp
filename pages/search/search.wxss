@@ -1,0 +1,52 @@
+/* pages/aboutUs/aboutUs.wxss */
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pic-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100vh;
+}
+
+.about-container {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0rpx;
+  background-color: #fff;
+  filter: alpha(opacity=0.7);
+  opacity: 0.5;
+  position: absolute;
+  left: 0vw;
+  top: 0vh;
+}
+
+.about-grid-main {
+  width: 70vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  margin-top: 20vh;
+  margin-left: 15vw;
+  border-radius: 10px;
+  background: #afc6fb;
+  /* -webkit-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+  -moz-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16); */
+  box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+  position: absolute;
+}
+
+.page__title {
+  text-align: center;
+  font-family: KaiTi;
+  font-size: 45rpx;
+  font-weight: 400;
+}

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Results",
+  "navigationBarTitleText": "识别结果",
   "usingComponents": {
     "wux-tabs": "/components/tabs/index",
     "wux-tab": "/components/tab/index",

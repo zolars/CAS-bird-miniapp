@@ -4,7 +4,7 @@ import { $wuxLoading } from "../../components/index";
 //获取应用实例
 const app = getApp();
 
-const buttons = [
+const recog_buttons = [
   {
     index: "camera",
     label: "拍照识别",
@@ -46,12 +46,7 @@ Page({
       "dark",
     ],
     colorIndex: 7,
-    dirs: ["horizontal", "vertical", "circle"],
-    dirIndex: 1,
-    sAngle: 0,
-    eAngle: 360,
-    spaceBetween: 14,
-    buttons,
+    recog_buttons,
   },
 
   onClick: function(e) {
@@ -91,7 +86,7 @@ Page({
         },
       });
     } else if (method == -1) {
-      console.log("Clicked!", e);
+      wx.navigateTo({ url: "/pages/search/search" });
     }
   },
 

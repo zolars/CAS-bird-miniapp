@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.pic-container {
+.image-container {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -37,7 +37,7 @@
   margin-top: 20vh;
   margin-left: 15vw;
   border-radius: 10px;
-  background: #afc6fb;
+  background: #afcffb;
   /* -webkit-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
   -moz-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16); */
   box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
@@ -48,5 +48,59 @@
   text-align: center;
   font-family: KaiTi;
   font-size: 45rpx;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.length-image-0 {
+  z-index: 2000;
+  width: 10vw;
+  height: 20vh;
+  margin-left: 45vw;
+  margin-top: 40vh;
+  position: absolute;
+}
+
+.length-image-1 {
+  z-index: 2000;
+  width: 20vw;
+  height: 40vh;
+  margin-left: 40vw;
+  margin-top: 20vh;
+  position: absolute;
+}
+
+.length-image-2 {
+  z-index: 2000;
+  width: 40vw;
+  height: 60vh;
+  margin-left: 30vw;
+  margin-top: 0vh;
+  position: absolute;
+}
+
+.length-image-3 {
+  z-index: 2000;
+  width: 35vw;
+  height: 60vh;
+  margin-left: 32.5vw;
+  margin-top: 0vh;
+  position: absolute;
+}
+
+.slider-text {
+  width: 80vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-family: KaiTi;
+  font-size: 30rpx;
+  font-weight: 500;
+  position: absolute;
+}
+
+.slider {
+  margin-top: 60vh;
+  margin-left: 10vw;
+  width: 80vw;
+  position: absolute;
 }

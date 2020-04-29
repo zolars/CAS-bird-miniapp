@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "wux-fab-button-back": "/components/fab-button-back/index",
+    "wux-fab-button-next": "/components/fab-button-next/index",
     "wux-button": "/components/button/index"
   },
   "disableScroll": true,

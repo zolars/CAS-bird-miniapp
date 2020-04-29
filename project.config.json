@@ -57,9 +57,16 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/search/search",
-					"pathName": "pages/search/search",
+					"name": "pages/search_length/search_length",
+					"pathName": "pages/search_length/search_length",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search_color/search_color",
+					"pathName": "pages/search_color/search_color",
+					"query": "data=600",
 					"scene": null
 				}
 			]

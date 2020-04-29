@@ -4,7 +4,8 @@
     "pages/indexMap/indexMap",
     "pages/results/results",
     "pages/showdetail/showdetail",
-    "pages/search/search",
+    "pages/search_length/search_length",
+    "pages/search_color/search_color",
     "pages/aboutUs/aboutUs"
   ],
   "window": {

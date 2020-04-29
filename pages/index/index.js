@@ -86,7 +86,7 @@ Page({
         },
       });
     } else if (method == -1) {
-      wx.navigateTo({ url: "/pages/search/search" });
+      wx.navigateTo({ url: "/pages/search_length/search_length" });
     }
   },
 

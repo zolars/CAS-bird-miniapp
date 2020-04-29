@@ -11,19 +11,25 @@ Page({
       "../../images/2.png",
       "../../images/3.png",
     ],
-    if_hidden: [true, true, true, true],
+    btn_hidden: "none",
+    image_hidden: [true, true, true, true],
     sliderText: "请拖动滑框选择您看到的鸟类的体长",
     length: -1,
   },
 
-  onClick: function(e) {
+  onClickBack: function(e) {
     wx.navigateBack();
+  },
+  onClickNext: function(e) {
+    wx.navigateTo({
+      url: "/pages/search_color/search_color?data=" + this.data.length,
+    });
   },
 
   sliderChange: function(e) {
     let length = e.detail.value;
     let sliderText = "该鸟的体长约为：";
-    let if_hidden = [true, true, true, true];
+    let image_hidden = [true, true, true, true];
     if (length >= 1000) {
       sliderText += length / 1000 + "米";
     } else if (length > 10) {
@@ -32,24 +38,25 @@ Page({
 
     if (length < 150) {
       sliderText += "\n麻雀体型或者更小";
-      if_hidden[0] = false;
+      image_hidden[0] = false;
     } else if (length >= 150 && length < 300) {
       sliderText += "\n麻雀和雪鸽体型之间";
-      if_hidden[1] = false;
+      image_hidden[1] = false;
     } else if (length >= 300 && length < 600) {
       sliderText += "\n雪鸽和渡鸦体型之间";
-      if_hidden[2] = false;
+      image_hidden[2] = false;
     } else if (length >= 600 && length < 1400) {
       sliderText += "\n渡鸦和天鹅体型之间";
-      if_hidden[3] = false;
+      image_hidden[3] = false;
     } else if (length >= 1400) {
       sliderText += "\n天鹅体型或者更大";
-      if_hidden[3] = false;
+      image_hidden[3] = false;
     }
     this.setData({
       length: length,
       sliderText: sliderText,
-      if_hidden: if_hidden,
+      btn_hidden: "block",
+      image_hidden: image_hidden,
     });
   },
 

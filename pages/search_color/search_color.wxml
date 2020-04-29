@@ -1,0 +1,16 @@
+<!-- pages/aboutUs/aboutUs.wxml -->
+<wux-fab-button-back position="bottomLeft" theme="royal" direction="horizontal" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" bind:backButtonClick="onClickBack" />
+<wux-fab-button-next position="bottomRight" theme="royal" direction="horizontal" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" bind:nextButtonClick="onClickNext" style="display:{{btn_hidden}}" />
+<view class="page">
+  <view class="main-container">
+    <view class="image-container">
+      <image class="bg-image" src="{{image_bg}}"></image>
+    </view>
+    <view class="about-container"></view>
+    <view class="about-grid-main">
+      <view class="page__title">请选择鸟的主要体色</view>
+    </view>
+    <text class="canvas-text">选择1-3种:</text>
+    <canvas class="color-canvas" type="2d" id="myCanvas" bindtouchend="onClickColor"></canvas>
+  </view>
+</view>

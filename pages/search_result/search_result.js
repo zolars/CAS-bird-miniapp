@@ -12,7 +12,7 @@ Page({
   },
 
   onClickHome: function(e) {
-    wx.reLaunch({ url: "/pages/index/index" });
+    wx.redirectTo({ url: "/pages/index/index" });
   },
 
   /**
@@ -31,15 +31,43 @@ Page({
         dataSearch[key]["体长"] >= 0.95 * length &&
         dataSearch[key]["体长"] <= 1.05 * length
       ) {
+        let mark = true;
         for (let color in colors) {
-          if (colors[color] && dataSearch[key]["颜色"].indexOf(color) != -1) {
-            if (poyang.indexOf(key) != -1) {
-              results.push({
-                key: key,
-                length: dataSearch[key]["体长"],
-                color: dataSearch[key]["颜色"],
-                pic: birdData[key]["pic"],
-              });
+          if (colors[color]) {
+            mark *= dataSearch[key]["颜色"].indexOf(color) != -1;
+          }
+        }
+        if (mark) {
+          if (poyang.indexOf(key) != -1) {
+            results.push({
+              key: key,
+              length: dataSearch[key]["体长"] + "mm",
+              color: dataSearch[key]["颜色"],
+              pic: birdData[key]["pic"],
+            });
+          }
+        }
+      }
+    }
+
+    if (results.length == 0) {
+      for (let key in dataSearch) {
+        if (
+          dataSearch[key]["体长"] >= 0.95 * length &&
+          dataSearch[key]["体长"] <= 1.05 * length
+        ) {
+          let mark = true;
+          for (let color in colors) {
+            if (colors[color] && dataSearch[key]["颜色"].indexOf(color) != -1) {
+              if (poyang.indexOf(key) != -1) {
+                results.push({
+                  key: key,
+                  length: dataSearch[key]["体长"] + "mm",
+                  color: dataSearch[key]["颜色"],
+                  pic: birdData[key]["pic"],
+                });
+                break;
+              }
             }
           }
         }

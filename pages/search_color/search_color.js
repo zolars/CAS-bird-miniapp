@@ -24,12 +24,28 @@ Page({
     wx.navigateBack();
   },
   onClickNext: function(e) {
+    let selected = this.data.selected;
+    for (let key in selected) {
+      if (key == "棕") {
+        selected["金"] = true;
+      }
+      if (key == "红") {
+        selected["褐"] = true;
+      }
+      if (key == "绿") {
+        selected["橄榄"] = true;
+      }
+      if (key == "蓝") {
+        selected["紫"] = true;
+      }
+    }
+
     wx.navigateTo({
       url:
         "/pages/search_result/search_result?length=" +
         this.data.length +
         "&colors=" +
-        JSON.stringify(this.data.selected),
+        JSON.stringify(selected),
     });
   },
 

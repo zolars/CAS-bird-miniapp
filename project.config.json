@@ -10,6 +10,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -19,7 +20,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"nodeModules": true
+		"bundle": true,
+		"enhance": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
@@ -63,10 +65,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "pages/search_color/search_color",
 					"pathName": "pages/search_color/search_color",
-					"query": "data=600",
+					"query": "length=600",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/search_result/search_result",
+					"pathName": "pages/search_result/search_result",
+					"query": "length=600&colors= {\"黑\":false,\"灰\":false,\"白\":true,\"棕\":false,\"红\":false,\"黄\":true,\"绿\":false,\"蓝\":false,\"橙\":false}",
 					"scene": null
 				}
 			]

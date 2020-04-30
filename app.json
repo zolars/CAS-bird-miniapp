@@ -6,6 +6,7 @@
     "pages/showdetail/showdetail",
     "pages/search_length/search_length",
     "pages/search_color/search_color",
+    "pages/search_result/search_result",
     "pages/aboutUs/aboutUs"
   ],
   "window": {

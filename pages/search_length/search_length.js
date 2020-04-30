@@ -22,7 +22,7 @@ Page({
   },
   onClickNext: function(e) {
     wx.navigateTo({
-      url: "/pages/search_color/search_color?data=" + this.data.length,
+      url: "/pages/search_color/search_color?length=" + this.data.length,
     });
   },
 

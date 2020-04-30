@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wux-fab-button-home": "/components/fab-button-home/index",
+    "wux-button": "/components/button/index"
+  },
+  "navigationStyle": "custom"
+}

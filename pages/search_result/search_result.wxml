@@ -1,0 +1,36 @@
+<!-- pages/aboutUs/aboutUs.wxml -->
+<!-- <wux-fab-button-back position="bottomLeft" theme="royal" direction="horizontal" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" bind:backButtonClick="onClickBack" /> -->
+<wux-fab-button-home position="bottomRight" theme="royal" direction="horizontal" reverse="{{ reverse }}" spaceBetween="14" sAngle="0" eAngle="360" bind:homeButtonClick="onClickHome" />
+<view class="page">
+  <view class="main-container">
+    <view class="image-container">
+      <image class="bg-image" src="{{ image_bg }}"></image>
+    </view>
+    <view class="about-container"></view>
+    <view class="about-grid-main">
+      <view class="page__title">您看到的可能是:</view>
+    </view>
+    <view class="result-container">
+      <view class="page__bd">
+        <view class="weui-panel__bd">
+          <block wx:for="{{ results }}" wx:key="key" wx:for-item="item">
+            <navigator class="weui-media-box weui-media-box_appmsg" url="/pages/showdetail/showdetail?showId={{ item.key }}">
+              <view class="weui-media-box__hd">
+                <image class="weui-media-box__thumb" src="{{ item.pic }}" alt></image>
+              </view>
+              <view class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">{{ item.key }}</h4>
+                <view class="weui-media-box__desc" style="color:rgb(0,0,0,50%)">
+                  体长: {{ item.length }}
+                </view>
+                <view class="weui-media-box__desc" style="color:rgb(0,0,0,50%)">
+                  颜色: {{ item.color }}
+                </view>
+              </view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

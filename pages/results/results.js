@@ -27,8 +27,6 @@ Page({
       results[2].probability = "很少出现在鄱阳湖: 0";
     }
 
-    console.log(results[0].birdNameCN);
-
     this.setData({
       data: JSON.parse(option.data)["detected"],
       amount: JSON.parse(option.data)["detected"].length,
@@ -53,6 +51,7 @@ Page({
         },
       ],
     });
+    console.log(this.data.results);
   },
 
   onTabsChange: function(e) {

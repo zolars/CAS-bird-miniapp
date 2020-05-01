@@ -21,7 +21,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"bundle": true
+		"bundle": true,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
@@ -76,6 +77,13 @@
 					"name": "pages/search_result/search_result",
 					"pathName": "pages/search_result/search_result",
 					"query": "length=140&colors= {\"黑\":false,\"灰\":false,\"白\":false,\"棕\":true,\"红\":false,\"黄\":false,\"绿\":false,\"蓝\":false,\"橙\":false,\"金\":true,\"褐\":true,\"橄榄\":true,\"紫\":true}",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/aboutUs/aboutUs",
+					"pathName": "pages/aboutUs/aboutUs",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -4,14 +4,28 @@
     <image class="show-image" src="{{resultIndex}}" mode="aspectFit"></image>
   </view>
 </view>
-<view class="attrs" wx:for="{{birdInfoMap.attrs}}" wx:for-index="key">
-  <text class="key">{{key}}</text>
-  <text class="item" decode="{{true}}" space="{{true}}">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{item}}
-  </text>
-  <text>\n</text>
+<view class="weui-panel">
+  <view class="weui-panel__hd">基本信息</view>
+  <view class="weui-panel__bd" wx:for="{{birdInfoMap.newattrs}}" wx:for-index="key">
+    <view class="weui-media-box weui-media-box_text">
+      <h4 class="weui-media-box__title">{{key}}</h4>
+      <view class="weui-media-box__desc" style="color:rgb(0,0,0,50%); -webkit-line-clamp:30;">
+        {{item}}
+      </view>
+    </view>
+  </view>
 </view>
-<view class="layout_horizontal">
-  <text class="foot-item">数据来源</text>
-  <text class="foot-item">\n 中科院地理所</text>
+<view class="weui-panel">
+  <view class="weui-panel__hd">更多知识</view>
+  <view class="weui-panel__bd" wx:for="{{birdInfoMap.attrs}}" wx:for-index="key">
+    <view class="weui-media-box weui-media-box_text">
+      <h4 class="weui-media-box__title">{{key}}</h4>
+      <view class="weui-media-box__desc" style="color:rgb(0,0,0,50%); -webkit-line-clamp:30;">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-footer" style="margin: 3vh 0 3vh 0;">
+  <view class="weui-footer__text">数据来源：中科院地理所</view>
 </view>

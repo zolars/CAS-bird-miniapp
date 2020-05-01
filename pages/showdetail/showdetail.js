@@ -10,6 +10,7 @@ Page({
     birdInfoMap: {
       number: "Null",
       attrs: null,
+      newattrs: null,
     },
   },
 
@@ -23,9 +24,10 @@ Page({
     const newbirdData = require("../../utils/data.js").getData("new_pedia");
 
     var detail = {};
+    var newdetail = {};
 
     for (var attr in newbirdData[showId]) {
-      detail[attr] = newbirdData[showId][attr];
+      newdetail[attr] = newbirdData[showId][attr];
     }
     for (var attr in birdData[showId]) {
       detail[attr] = birdData[showId][attr];
@@ -38,6 +40,7 @@ Page({
       resultIndex: pic,
       birdInfoMap: {
         number: "Null",
+        newattrs: newdetail,
         attrs: detail,
       },
     });

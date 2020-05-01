@@ -12,7 +12,7 @@ Page({
   },
 
   onClickHome: function(e) {
-    wx.redirectTo({ url: "/pages/index/index" });
+    wx.reLaunch({ url: "/pages/index/index" });
   },
 
   /**

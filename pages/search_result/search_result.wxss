@@ -1,5 +1,5 @@
 /* pages/aboutUs/aboutUs.wxss */
-@import "weui.wxss";
+@import "../../weui.wxss";
 
 .main-container {
   width: 100vw;

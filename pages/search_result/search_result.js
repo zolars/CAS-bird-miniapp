@@ -43,7 +43,7 @@ Page({
               key: key,
               length: dataSearch[key]["体长"] + "mm",
               color: dataSearch[key]["颜色"],
-              pic: birdData[key]["pic"],
+              pic: "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" + key,
             });
           }
         }
@@ -64,7 +64,9 @@ Page({
                   key: key,
                   length: dataSearch[key]["体长"] + "mm",
                   color: dataSearch[key]["颜色"],
-                  pic: birdData[key]["pic"],
+                  pic:
+                    "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+                    key,
                 });
                 break;
               }

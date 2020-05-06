@@ -1,7 +1,7 @@
 <!-- pages/showdetail/showdetail.wxml -->
 <view class="layout_horizontal">
   <view>
-    <image class="show-image" src="{{resultIndex}}" mode="aspectFit"></image>
+    <image class="show-image" src="{{pic}}" mode="aspectFit"></image>
   </view>
 </view>
 <view class="weui-panel">
@@ -26,6 +26,6 @@
     </view>
   </view>
 </view>
-<view class="weui-footer" style="margin: 3vh 0 3vh 0;">
+<view class="weui-footer" style="margin: 3vh 0 0 0;">
   <view class="weui-footer__text">数据来源：中科院地理所</view>
 </view>

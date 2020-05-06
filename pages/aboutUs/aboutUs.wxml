@@ -9,7 +9,7 @@
       <view class="weui-media-box weui-media-box_text">
         <h4 class="weui-media-box__title">小程序简介</h4>
         <view class="weui-media-box__desc" style="color:rgb(0,0,0,50%); -webkit-line-clamp:30;">
-          水鸟识别小程序可识别164种水鸟, 由"地球大数据科学工程CAS-Earth"先导专项支持, 由中科院软件所天基综合信息系统重点实验室(Science & Technology on Integrated Infomation System Laboratory)开发, 数据由中科院地理所提供.
+          "中国水鸟及栖息地数据库" (iBirding.com.cn) 由中国科学院地理科学与资源研究所、软件研究所、空天研究院、计算机网络中心等联合开发, 由中国科学院"地球科学大数据工程"战略先导专项、保尔森基金会、老牛基金会、全球环境基金(GEF)江西示范项目、全球环境基金(GEF)大黄海生态系项目等资助, 国家生态科学数据中心与中国科学院"地球科学大数据工程"战略先导专项提供服务器与高级计算支持, 中科河州生态技术公司提供数据库维护与运行支持.
         </view>
       </view>
       <view class="weui-media-box weui-media-box_text">

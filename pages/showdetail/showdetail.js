@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultIndex: null, //"../../images/label/003.jpg",
+    pic: null, //"../../images/label/003.jpg",
     showId: null,
 
     birdInfoMap: {
@@ -37,7 +37,7 @@ Page({
     delete detail.pic;
     this.setData({
       showId: showId,
-      resultIndex: pic,
+      pic: pic,
       birdInfoMap: {
         number: "Null",
         newattrs: newdetail,

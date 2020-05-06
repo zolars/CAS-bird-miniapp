@@ -12,11 +12,10 @@ Page({
   onLoad: function(option) {
     console.log("onLoad", option);
 
-    const birdData = require("../../utils/data.js").getData("pedia");
+    const birdData = require("../../utils/data.js").getData("new_pedia");
     const poyang = require("../../utils/data.js").getData("poyang");
     const results = JSON.parse(option.data)["detected"][0][1];
 
-    console.log();
     if (poyang.indexOf(results[0].birdNameCN) == -1) {
       results[0].probability = "很少出现在鄱阳湖: 0";
     }
@@ -35,23 +34,28 @@ Page({
           key: results[0].birdNameCN,
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
-          pic: birdData[results[0].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[0].birdNameCN,
         },
         {
           key: results[1].birdNameCN,
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
-          pic: birdData[results[1].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[1].birdNameCN,
         },
         {
           key: results[2].birdNameCN,
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
-          pic: birdData[results[2].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[2].birdNameCN,
         },
       ],
     });
-    console.log(this.data.results);
   },
 
   onTabsChange: function(e) {
@@ -165,7 +169,7 @@ Page({
   onChange: function(e) {
     console.log("onChange", e);
     const results = this.data.data[e.detail.current - 1][1];
-    const birdData = require("../../utils/data.js").getData("pedia");
+    const birdData = require("../../utils/data.js").getData("new_pedia");
 
     this.setData({
       current: e.detail.current,
@@ -176,19 +180,25 @@ Page({
           key: results[0].birdNameCN,
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
-          pic: birdData[results[0].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[0].birdNameCN,
         },
         {
           key: results[1].birdNameCN,
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
-          pic: birdData[results[1].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[1].birdNameCN,
         },
         {
           key: results[2].birdNameCN,
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
-          pic: birdData[results[2].birdNameCN]["pic"],
+          pic:
+            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            results[2].birdNameCN,
         },
       ],
     });

@@ -13,18 +13,18 @@ Page({
     console.log("onLoad", option);
 
     const birdData = require("../../utils/data.js").getData("new_pedia");
-    const poyang = require("../../utils/data.js").getData("poyang");
     const results = JSON.parse(option.data)["detected"][0][1];
 
-    if (poyang.indexOf(results[0].birdNameCN) == -1) {
-      results[0].probability = "很少出现在鄱阳湖: 0";
-    }
-    if (poyang.indexOf(results[1].birdNameCN) == -1) {
-      results[1].probability = "很少出现在鄱阳湖: 0";
-    }
-    if (poyang.indexOf(results[2].birdNameCN) == -1) {
-      results[2].probability = "很少出现在鄱阳湖: 0";
-    }
+    // const poyang = require("../../utils/data.js").getData("poyang");
+    // if (poyang.indexOf(results[0].birdNameCN) == -1) {
+    //   results[0].probability = "很少出现在鄱阳湖: 0";
+    // }
+    // if (poyang.indexOf(results[1].birdNameCN) == -1) {
+    //   results[1].probability = "很少出现在鄱阳湖: 0";
+    // }
+    // if (poyang.indexOf(results[2].birdNameCN) == -1) {
+    //   results[2].probability = "很少出现在鄱阳湖: 0";
+    // }
 
     this.setData({
       data: JSON.parse(option.data)["detected"],

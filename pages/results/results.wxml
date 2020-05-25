@@ -2,10 +2,10 @@
   <view class="show-image">
     <canvas bindtap="onCanvas" class="in-class" canvas-id="myCanvas" style="height:450px" />
   </view>
-  <view style="padding-top:35vh">
+  <view style="padding-top:35vh;padding-bottom:10px;">
     <wux-pagination current="{{ current }}" total="{{ amount }}" mode="button" simple controlled bind:change="onChange">
-      <view slot="prev">Prev</view>
-      <view slot="next">Next</view>
+      <view slot="prev">{{'←'}}</view>
+      <view slot="next">{{'→'}}</view>
     </wux-pagination>
   </view>
   <view class="page__bd">
@@ -14,20 +14,19 @@
         <wux-tab key="{{ item.key }}" title="{{ item.key }}"></wux-tab>
       </block>
     </wux-tabs>
-    <swiper current="{{ index }}" bindchange="onSwiperChange" style="height:45vh;background-color:white;">
+    <swiper current="{{ index }}" bindchange="onSwiperChange" style="height:33vh;background-color:white;">
       <block wx:for="{{ results }}" wx:key="key">
         <swiper-item>
           <view class="result">
             <image class="result-image" src="{{ item.pic }}" />
             <view class="result-text">
-              <view class="page__desc">中文名:</view>
-              <view class="page__title">{{ item.key }}</view>
-              <view class="page__desc">英文名:</view>
-              <view class="page__title">{{ item.nameEN }}</view>
-              <view class="page__desc">置信率:</view>
-              <view class="page__title">{{ item.probability }}%</view>
-              <text>\n</text>
-              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;">
+              <view class="page__desc" style="margin-top:0px;">中文名:</view>
+              <view class="page__title" style="font-size:18px;">{{ item.key }}</view>
+              <view class="page__desc" style="margin-top:0px;">英文名:</view>
+              <view class="page__title" style="font-size:18px;">{{ item.nameEN }}</view>
+              <view class="page__desc" style="margin-top:0px;">置信率:</view>
+              <view class="page__title" style="font-size:18px;">{{ item.probability }}%</view>
+              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;color:#4FCD5F;">
                 查看详情
               </navigator>
             </view>
@@ -35,5 +34,6 @@
         </swiper-item>
       </block>
     </swiper>
+    <a url="TODO" class="weui-btn weui-btn_warn" style="width:75%">识别有误?点此反馈正确鸟种!</a>
   </view>
 </view>

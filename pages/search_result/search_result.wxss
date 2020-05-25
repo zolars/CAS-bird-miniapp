@@ -24,18 +24,6 @@
   position: absolute;
 }
 
-.about-container {
-  width: 100vw;
-  height: 150vh;
-  border-radius: 0rpx;
-  background-color: #fff;
-  filter: alpha(opacity=0.7);
-  opacity: 0.8;
-  position: absolute;
-  left: 0vw;
-  top: 0vh;
-}
-
 .about-grid-main {
   width: 70vw;
   padding-top: 3vh;

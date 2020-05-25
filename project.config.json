@@ -25,7 +25,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.0",
+	"libVersion": "2.11.0",
 	"appid": "wx62ff2f807b3dddb9",
 	"projectname": "cas-bird-miniapp",
 	"debugOptions": {

@@ -23,7 +23,7 @@
   </text>
   <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
-      <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">About</navigator>
+      <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">关于我们</navigator>
     </view>
     <view class="weui-footer__text">Copyright © Institute of Software, CAS</view>
   </view>

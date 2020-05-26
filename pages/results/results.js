@@ -10,8 +10,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(option) {
-    console.log("onLoad", option);
-
     const birdData = require("../../utils/data.js").getData("new_pedia");
     const results = JSON.parse(option.data)["detected"][0][1];
 
@@ -71,6 +69,8 @@ Page({
   },
 
   onSwiperChange: function(e) {
+    wx.vibrateShort();
+
     console.log("onSwiperChange", e);
     const { current: index, source } = e.detail;
     const { key } = this.data.results[index];
@@ -161,7 +161,7 @@ Page({
         }
       },
       fail: function(res) {
-        console.log("drawRect Fail: ", res);
+        console.log("drawRect Fail", res);
       },
     });
   },
@@ -170,6 +170,8 @@ Page({
     console.log("onChange", e);
     const results = this.data.data[e.detail.current - 1][1];
     const birdData = require("../../utils/data.js").getData("new_pedia");
+
+    wx.vibrateShort();
 
     this.setData({
       current: e.detail.current,
@@ -211,6 +213,51 @@ Page({
     const imageURL = wx.getStorageSync("image_cache");
     wx.previewImage({
       urls: [imageURL],
+    });
+  },
+
+  onCorrect: function() {
+    wx.vibrateShort();
+
+    const imageURL = wx.getStorageSync("image_cache");
+    let coordinate = this.data.data[this.data.current - 1][0];
+    let width = 0;
+    let height = 0;
+
+    wx.getImageInfo({
+      src: imageURL,
+      success: function(res) {
+        width = res.width;
+        height = res.height;
+        wx.getSystemInfo({
+          success: function(res) {
+            height = (res.windowWidth / width) * height;
+            width = res.windowWidth;
+            wx.canvasToTempFilePath({
+              x: 0,
+              y: 0,
+              width: width,
+              height: height,
+              canvasId: "myCanvas",
+              success: function(res) {
+                console.log(res.tempFilePath);
+                wx.navigateTo({
+                  url:
+                    "/pages/correct/correct?data=" +
+                    JSON.stringify({
+                      coordinate: coordinate,
+                    }) +
+                    "&imageURL=" +
+                    res.tempFilePath,
+                });
+              },
+              fail: function(res) {
+                console.log("canvasToTempFilePath Fail", res);
+              },
+            });
+          },
+        });
+      },
     });
   },
 

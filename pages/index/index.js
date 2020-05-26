@@ -50,6 +50,7 @@ Page({
   },
 
   onClick: function(e) {
+    wx.vibrateShort();
     let that = this;
     const method = e.detail.index;
     if (method == 0) {

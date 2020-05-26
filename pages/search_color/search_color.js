@@ -21,9 +21,11 @@ Page({
   },
 
   onClickBack: function(e) {
+    wx.vibrateShort();
     wx.navigateBack();
   },
   onClickNext: function(e) {
+    wx.vibrateShort();
     let selected = this.data.selected;
     for (let key in selected) {
       if (selected[key] && key == "棕") {

@@ -12,6 +12,7 @@ Page({
   },
 
   onClickHome: function(e) {
+    wx.vibrateShort();
     wx.reLaunch({ url: "/pages/index/index" });
   },
 

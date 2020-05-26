@@ -26,10 +26,10 @@ function _objectSpread(e) {
           _defineProperty(e, t, a[t]);
         })
       : Object.getOwnPropertyDescriptors
-      ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
-      : ownKeys(a).forEach(function(t) {
-          Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t));
-        });
+        ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a))
+        : ownKeys(a).forEach(function(t) {
+            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t));
+          });
   }
   return e;
 }
@@ -40,7 +40,7 @@ function _defineProperty(t, e, a) {
           value: a,
           enumerable: !0,
           configurable: !0,
-          writable: !0
+          writable: !0,
         })
       : (t[e] = a),
     t
@@ -77,12 +77,12 @@ var defaultAction =
     direction: {
       type: String,
       value: "horizontal",
-      observer: "forceUpdateButtonStyle"
+      observer: "forceUpdateButtonStyle",
     },
     spaceBetween: {
       type: Number,
       value: 10,
-      observer: "forceUpdateButtonStyle"
+      observer: "forceUpdateButtonStyle",
     },
     duration: { type: Number, value: 300 },
     scale: { type: Number, value: 0.9, observer: "forceUpdateButtonStyle" },
@@ -95,9 +95,9 @@ var defaultAction =
       value: !1,
       observer: function(t) {
         this.data.controlled && this.updated(t);
-      }
+      },
     },
-    controlled: { type: Boolean, value: !1 }
+    controlled: { type: Boolean, value: !1 },
   },
   data: { buttonStyle: [], buttonVisible: !1 },
   computed: {
@@ -144,16 +144,16 @@ var defaultAction =
               hover:
                 t.hoverClass && "default" !== t.hoverClass
                   ? t.hoverClass
-                  : "".concat(a, "__button--hover")
+                  : "".concat(a, "__button--hover"),
             };
           }),
           icon: "".concat(a, "__icon"),
           label: "".concat(a, "__label"),
           backdrop: "".concat(a, "__backdrop"),
-          hover: l && "default" !== l ? l : "".concat(a, "--hover")
+          hover: l && "default" !== l ? l : "".concat(a, "--hover"),
         };
-      }
-    ]
+      },
+    ],
   },
   methods: {
     updated: function(t) {
@@ -165,6 +165,7 @@ var defaultAction =
         this.triggerEvent("change", { value: t });
     },
     onToggle: function() {
+      wx.vibrateShort();
       this.onChange(!this.data.buttonVisible);
     },
     onTap: function(t) {
@@ -279,7 +280,7 @@ var defaultAction =
         "error",
         _objectSpread({}, t.detail, {}, t.currentTarget.dataset)
       );
-    }
+    },
   },
   ready: function() {
     var t = this.data,
@@ -287,5 +288,5 @@ var defaultAction =
       a = t.visible,
       n = t.controlled ? a : e;
     this.updated(n);
-  }
+  },
 });

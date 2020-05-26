@@ -23,9 +23,7 @@ page {
 }
 
 .page__title {
-  margin-left: 10px;
-  text-align: left;
-  font-size: 20px;
+  text-align: center;
   font-weight: 400;
 }
 

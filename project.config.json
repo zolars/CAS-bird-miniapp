@@ -85,6 +85,13 @@
 					"pathName": "pages/aboutUs/aboutUs",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/correct/correct",
+					"pathName": "pages/correct/correct",
+					"query": "data=%7B%22coordinate%22%3A%5B258.6456604003906%2C165.32778930664062%2C577.756591796875%2C426.1920166015625%5D%2C%22results%22%3A%5B%7B%22birdNum%22%3A%2245%22%2C%22birdNameCN%22%3A%22%E8%B5%A4%E9%BA%BB%E9%B8%AD%22%2C%22probability%22%3A%2299.9%22%7D%2C%7B%22birdNum%22%3A%2218%22%2C%22birdNameCN%22%3A%22%E6%B0%B4%E9%9B%89%22%2C%22probability%22%3A%220.0%22%7D%2C%7B%22birdNum%22%3A%2292%22%2C%22birdNameCN%22%3A%22%E5%A4%A7%E9%B8%A8%22%2C%22probability%22%3A%220.0%22%7D%2C%7B%22birdNum%22%3A%2281%22%2C%22birdNameCN%22%3A%22%E8%B5%A4%E9%A2%88%E9%B8%AD%22%2C%22probability%22%3A%220.0%22%7D%2C%7B%22birdNum%22%3A%22104%22%2C%22birdNameCN%22%3A%22%E4%B8%9C%E6%96%B9%E9%B8%BB%22%2C%22probability%22%3A%220.0%22%7D%5D%7D",
+					"scene": null
 				}
 			]
 		}

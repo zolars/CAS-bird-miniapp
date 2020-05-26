@@ -18,9 +18,11 @@ Page({
   },
 
   onClickBack: function(e) {
+    wx.vibrateShort();
     wx.navigateBack();
   },
   onClickNext: function(e) {
+    wx.vibrateShort();
     wx.navigateTo({
       url: "/pages/search_color/search_color?length=" + this.data.length,
     });

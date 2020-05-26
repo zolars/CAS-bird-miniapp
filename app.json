@@ -4,6 +4,7 @@
     "pages/indexMap/indexMap",
     "pages/results/results",
     "pages/showdetail/showdetail",
+    "pages/correct/correct",
     "pages/search_length/search_length",
     "pages/search_color/search_color",
     "pages/search_result/search_result",

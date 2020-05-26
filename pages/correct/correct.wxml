@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="page__bd">
+    <image class="show-image" src="{{imageURL}}" mode="aspectFit"></image>
+    <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+      <form class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <i class="weui-icon-search"></i>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索鸟种" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <span class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput"></span>
+        </view>
+        <label class="weui-search-bar__label" bindtap="showInput">
+          <i class="weui-icon-search"></i>
+          <span class="weui-search-bar__text">搜索鸟种</span>
+        </label>
+      </form>
+      <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}" wx:for="{{ matches }}" wx:key="中文名" wx:for-item="item">
+      <view id="{{item['中文名']}}" bindtap="onChoose" class="weui-cell weui-cell_active weui-cell_access">
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>{{ item["中文名"] }}</view>
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>{{ item["学名"] }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fadeIn" wx:if="{{onChoose}}">
+    <view class="weui-mask"></view>
+    <view class="weui-dialog">
+      <view class="weui-dialog__hd">
+        <strong class="weui-dialog__title">更正结果</strong>
+      </view>
+      <view class="weui-dialog__bd">您确定您看到的鸟种是{{selected}}吗？</view>
+      <view class="weui-dialog__ft">
+        <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancel">返回</a>
+        <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="upload">确认</a>
+      </view>
+    </view>
+  </view>
+  <view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast">
+      <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+      <view class="weui-toast__content">反馈成功</view>
+    </view>
+  </view>
+</view>

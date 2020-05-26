@@ -20,13 +20,12 @@
           <view class="result">
             <image class="result-image" src="{{ item.pic }}" />
             <view class="result-text">
-              <view class="page__desc" style="margin-top:0px;">中文名:</view>
-              <view class="page__title" style="font-size:18px;">{{ item.key }}</view>
-              <view class="page__desc" style="margin-top:0px;">英文名:</view>
-              <view class="page__title" style="font-size:18px;">{{ item.nameEN }}</view>
-              <view class="page__desc" style="margin-top:0px;">置信率:</view>
-              <view class="page__title" style="font-size:18px;">{{ item.probability }}%</view>
-              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;color:#4FCD5F;">
+              <view class="page__title" style="font-size:22px;">{{ item.key }}</view>
+              <view class="page__title" style="font-size:16px;">{{ item.nameEN }}</view>
+              <view class="page__title" style="font-size:16px;">
+                识别置信率 : {{ item.probability }}%
+              </view>
+              <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;color:#4FCD5F;text-align:center;">
                 查看详情
               </navigator>
             </view>
@@ -34,6 +33,6 @@
         </swiper-item>
       </block>
     </swiper>
-    <a url="TODO" class="weui-btn weui-btn_warn" style="width:75%">识别有误?点此反馈正确鸟种!</a>
+    <a bindtap="onCorrect" class="weui-btn weui-btn_warn" style="width:100%">以上都不是?点此反馈正确鸟种!</a>
   </view>
 </view>

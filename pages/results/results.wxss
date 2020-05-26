@@ -17,11 +17,14 @@
 }
 
 .result-image {
-  width: 60%;
+  margin: 10px 10px 10px 10px;
+  width: 50%;
+  height: 30vh;
 }
 
 .result-text {
-  width: 40%;
+  padding-top: 7vh;
+  width: 50%;
 }
 
 .divLine {

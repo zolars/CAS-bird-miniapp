@@ -33,7 +33,7 @@ Page({
       detail[attr] = birdData[showId][attr];
     }
 
-    var pic = "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" + showId;
+    var pic = "https://birdid.iscas.ac.cn:8080/getImage?picName=" + showId;
     delete detail.pic;
     this.setData({
       showId: showId,

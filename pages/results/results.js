@@ -33,7 +33,7 @@ Page({
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[0].birdNameCN,
         },
         {
@@ -41,7 +41,7 @@ Page({
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[1].birdNameCN,
         },
         {
@@ -49,7 +49,7 @@ Page({
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[2].birdNameCN,
         },
       ],
@@ -183,7 +183,7 @@ Page({
           nameEN: birdData[results[0].birdNameCN]["英文名"],
           probability: results[0].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[0].birdNameCN,
         },
         {
@@ -191,7 +191,7 @@ Page({
           nameEN: birdData[results[1].birdNameCN]["英文名"],
           probability: results[1].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[1].birdNameCN,
         },
         {
@@ -199,7 +199,7 @@ Page({
           nameEN: birdData[results[2].birdNameCN]["英文名"],
           probability: results[2].probability,
           pic:
-            "https://birdid.iscas.ac.cn:8080/getImage?birdNameCN=" +
+            "https://birdid.iscas.ac.cn:8080/getImage?picName=" +
             results[2].birdNameCN,
         },
       ],
@@ -219,44 +219,26 @@ Page({
   onCorrect: function() {
     wx.vibrateShort();
 
-    const imageURL = wx.getStorageSync("image_cache");
     let coordinate = this.data.data[this.data.current - 1][0];
-    let width = 0;
-    let height = 0;
 
-    wx.getImageInfo({
-      src: imageURL,
+    wx.canvasToTempFilePath({
+      x: 0,
+      y: 0,
+      canvasId: "myCanvas",
       success: function(res) {
-        width = res.width;
-        height = res.height;
-        wx.getSystemInfo({
-          success: function(res) {
-            height = (res.windowWidth / width) * height;
-            width = res.windowWidth;
-            wx.canvasToTempFilePath({
-              x: 0,
-              y: 0,
-              width: width,
-              height: height,
-              canvasId: "myCanvas",
-              success: function(res) {
-                console.log(res.tempFilePath);
-                wx.navigateTo({
-                  url:
-                    "/pages/correct/correct?data=" +
-                    JSON.stringify({
-                      coordinate: coordinate,
-                    }) +
-                    "&imageURL=" +
-                    res.tempFilePath,
-                });
-              },
-              fail: function(res) {
-                console.log("canvasToTempFilePath Fail", res);
-              },
-            });
-          },
+        console.log(res.tempFilePath);
+        wx.navigateTo({
+          url:
+            "/pages/correct/correct?data=" +
+            JSON.stringify({
+              coordinate: coordinate,
+            }) +
+            "&imageURL=" +
+            res.tempFilePath,
         });
+      },
+      fail: function(res) {
+        console.log("canvasToTempFilePath Fail", res);
       },
     });
   },

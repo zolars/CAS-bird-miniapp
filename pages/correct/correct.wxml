@@ -1,7 +1,7 @@
 <view class="page">
   <view class="page__bd">
-    <image class="show-image" src="{{imageURL}}" mode="aspectFit"></image>
-    <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+    <image class="show-image" src="{{imageURL}}" mode="aspectFit" style="position:absolute;"></image>
+    <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar" style="padding-top:50vh;background-color:rgb(0,0,0,0);">
       <form class="weui-search-bar__form">
         <view class="weui-search-bar__box">
           <i class="weui-icon-search"></i>
@@ -16,7 +16,7 @@
       <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
     </view>
     <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}" wx:for="{{ matches }}" wx:key="中文名" wx:for-item="item">
-      <view id="{{item['中文名']}}" bindtap="onChoose" class="weui-cell weui-cell_active weui-cell_access">
+      <view id="{{item['中文名']}}" bindtap="onChoose" class="weui-cell weui-cell_active weui-cell_access" style="width:100vw;">
         <view class="weui-cell__bd weui-cell_primary">
           <view>{{ item["中文名"] }}</view>
         </view>

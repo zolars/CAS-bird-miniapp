@@ -27,9 +27,9 @@ Page({
     imageURL: null,
     imageFile: null,
     pic: [
-      "../../images/temp1.jpeg",
-      "../../images/temp2.jpeg",
-      "../../images/temp3.jpeg",
+      "https://birdid.iscas.ac.cn:8080/getImage?picName=cover1",
+      "https://birdid.iscas.ac.cn:8080/getImage?picName=cover2",
+      "https://birdid.iscas.ac.cn:8080/getImage?picName=cover3",
     ],
 
     types: ["topLeft", "topRight", "bottomLeft", "bottomRight", "center"],

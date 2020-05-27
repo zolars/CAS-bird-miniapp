@@ -47,6 +47,7 @@ Page({
     ],
     colorIndex: 7,
     recog_buttons,
+    visitors: 0,
   },
 
   onClick: function(e) {
@@ -213,6 +214,15 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
+
+    let that = this;
+    wx.request({
+      url: "https://birdid.iscas.ac.cn:8080/getVisitAmount", //仅为示例，并非真实的接口地址
+      success(res) {
+        let visitors = res.data.list[0].visit_total;
+        that.setData({ visitors: visitors });
+      },
+    });
   },
 
   /**

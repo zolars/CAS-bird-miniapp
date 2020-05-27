@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/indexMap/indexMap",
     "pages/results/results",
     "pages/showdetail/showdetail",
     "pages/correct/correct",

@@ -28,11 +28,21 @@
               <navigator url="/pages/showdetail/showdetail?showId={{ item.key }}" style="margin:10px 10px;color:#4FCD5F;text-align:center;">
                 查看详情
               </navigator>
+              <navigator bindtap="upload" id="{{ item.key }}" url="javascript:void();" style="margin:10px 10px;color:#4FCD5F;text-align:center;">
+                确认是该鸟种
+              </navigator>
             </view>
           </view>
         </swiper-item>
       </block>
     </swiper>
     <a bindtap="onCorrect" class="weui-btn weui-btn_warn" style="width:100%">以上都不是?点此反馈正确鸟种!</a>
+  </view>
+  <view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast" style="margin-top:30vh">
+      <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+      <view class="weui-toast__content">反馈成功</view>
+    </view>
   </view>
 </view>

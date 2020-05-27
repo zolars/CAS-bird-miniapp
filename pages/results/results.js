@@ -4,6 +4,8 @@ Page({
     amount: 0,
     current: 1,
     results: null,
+    toast: false,
+    hideToast: false,
   },
 
   /**
@@ -226,7 +228,6 @@ Page({
       y: 0,
       canvasId: "myCanvas",
       success: function(res) {
-        console.log(res.tempFilePath);
         wx.navigateTo({
           url:
             "/pages/correct/correct?data=" +
@@ -241,6 +242,40 @@ Page({
         console.log("canvasToTempFilePath Fail", res);
       },
     });
+  },
+
+  upload: function(e) {
+    const imageURL = wx.getStorageSync("image_cache");
+    const coordinate = this.data.data[this.data.current - 1][0];
+    wx.uploadFile({
+      url: "https://birdid.iscas.ac.cn:8080/correct",
+      filePath: imageURL,
+      name: "image",
+      formData: {
+        birdNameCN: e.currentTarget.id,
+        coordinate: JSON.stringify({
+          x1: coordinate[0],
+          y1: coordinate[1],
+          x2: coordinate[2],
+          y2: coordinate[3],
+        }),
+      },
+    });
+
+    this.setData({
+      toast: true,
+    });
+    setTimeout(() => {
+      this.setData({
+        hideToast: true,
+      });
+      setTimeout(() => {
+        this.setData({
+          toast: false,
+          hideToast: false,
+        });
+      }, 300);
+    }, 1000);
   },
 
   /**

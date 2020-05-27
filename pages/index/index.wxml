@@ -25,6 +25,6 @@
     <view class="weui-footer__links">
       <navigator url="/pages/aboutUs/aboutUs" class="weui-footer__link">关于我们</navigator>
     </view>
-    <view class="weui-footer__text">Copyright © Institute of Software, CAS</view>
+    <view class="weui-footer__text">Copyright © ISCAS | 访问量: {{ visitors }}人次</view>
   </view>
 </view>

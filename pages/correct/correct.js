@@ -71,7 +71,23 @@ Page({
   },
 
   upload: function() {
-    console.log("Upload the correct result: " + this.data.selected);
+    const imageURL = wx.getStorageSync("image_cache");
+    const coordinate = this.data.coordinate;
+    wx.uploadFile({
+      url: "https://birdid.iscas.ac.cn:8080/correct",
+      filePath: imageURL,
+      name: "image",
+      formData: {
+        birdNameCN: this.data.selected,
+        coordinate: JSON.stringify({
+          x1: coordinate[0],
+          y1: coordinate[1],
+          x2: coordinate[2],
+          y2: coordinate[3],
+        }),
+      },
+    });
+
     this.setData({ onChoose: false, selected: null });
     this.setData({
       toast: true,

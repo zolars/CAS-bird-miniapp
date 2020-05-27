@@ -1,3 +1,0 @@
-<view>
-    <map class="mapContainer" markers="{{markers}}" scale="{{scale}}" alpha="{{alpha}}"></map>
-</view>
